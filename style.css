@@ -66,7 +66,7 @@ body {
 .avatar-text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  /* gap: 12px; */
 
   h2 {
     font-weight: 500;
@@ -79,7 +79,6 @@ body {
     font-size: 1rem;
     color: #212121;
     opacity: 70%;
-    line-height: 100%;
     letter-spacing: 0%;
   }
 }
@@ -100,11 +99,7 @@ body {
 }
 
 /* MEDIA QUERIES For HERO SECTION */
-@media screen and (max-width: 730px) {
-  .contentBody {
-    padding: 20px 3vw;
-  }
-
+@media screen and (max-width: 780px) {
   .hero-section {
     flex-direction: column;
     align-items: center;
@@ -120,11 +115,12 @@ body {
     height: 150px;
   }
   .avatar-info {
-    gap: 16px;
+    gap: 35px;
   }
   .avatar-text {
     h2 {
       font-size: 1.5rem;
+      margin-top: 15px;
     }
     p {
       font-weight: 500;
@@ -136,7 +132,7 @@ body {
     align-self: center;
   }
   .new-post-btn {
-    margin-top: 20px;
+    margin-top: 15px;
     width: 100%;
   }
 }
