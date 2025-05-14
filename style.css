@@ -23,6 +23,14 @@ body {
 /**************************************/
 
 /* Innocent */
+header {
+  height: 46px;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #ffffffcc;
+  display: flex;
+  justify-content: center;
+}
 
 /**************************************/
 /* Section - hero */
