@@ -13,13 +13,13 @@ This project is a collaborative web page created using **only HTML and CSS**.
 | Name              | GitHub Username     | Contribution Summary                     |
 |-------------------|---------------------|------------------------------------------|
 | Adella Emmanuel Idemetuk | @A4adella       | Responsible for creating the GitHub repository, configuration and hosting|
-| Olaide Alabi             | @gholayide      | Structuring the work, assigning roles, and monitoring workflow|
+| Olaide Alabi             | @holayide       | Structuring the work, assigning roles, and monitoring workflow|
 | Ezeah Ginika             | @kachi33        | Documentation|
 | Idowu Ola Fakomi         | @ola-fakomi     | Gather Assets(Icons and images)|
 | Karima Hassan            | @kareemahdbt    | Gather Assets(universal CSS elements, font families, colors)|
 | Izuchukwu E. Innocent    | @inno-stack     | Header|
 | Wise Enesi               | @EnesiWise      | Hero section|
-| Kosisochukwu Obidiegwu   | @               | Hero Responsive|
+| Kosisochukwu Obidiegwu   | @lotathebaby    | Hero Responsive|
 | Osamudiameh Ebhohon      | @sasdogged      | Main section|
 | Tawakalitu Omoloja       | @Lahitan        | Main responsive|
 | Uzoma Okorie Osi         | @Uzoma-oma      | Footer|
