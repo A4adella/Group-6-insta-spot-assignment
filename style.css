@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 20px;
+  margin: 34px 0 20px;
 }
 .avatar-container {
   display: flex;
