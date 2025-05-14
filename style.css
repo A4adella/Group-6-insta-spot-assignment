@@ -1,25 +1,18 @@
-/* @kareema font family link go below */
-
-:root {
-  /* kareemahdt */
-}
-
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  /* kareemahdt - kindly fill the styles below */
-  /* font-family: ; */
-  /* background-color: ; */
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 1440px;
-  margin: auto;
-  padding: 0 80px;
+.contentBody {
+  min-height: 100vh;
+  background-color: #fcf5e5;
+  padding: 30px 5vw;
 }
 
 /**************************************/
@@ -32,10 +25,130 @@ body {
 /* Section - hero */
 /**************************************/
 
-/* wise */
+/* WISE */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.avatar-container {
+  display: flex;
+  column-gap: 20px;
+}
+.new-post-btn {
+  background-color: #212121;
+  color: #fcf5e5;
+  border: none;
+  border-radius: 8px;
+  width: 149px;
+  height: 52px;
+  cursor: pointer;
+}
+.new-post-btn:hover {
+  opacity: 80%;
+  transition: all 0.3s ease-in-out;
+}
 
-/**************************************/
+.avatar {
+  width: 190px;
+  height: 190px;
+}
+.avatar-info {
+  line-height: 0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.avatar-text {
+  h2 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  p {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #212121;
+    opacity: 70%;
+  }
+}
+.edit-profile-btn {
+  text-decoration: none;
+  background-color: #fcf5e5;
+  color: #212121;
+  opacity: 60%;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+}
+.edit-profile-btn:hover {
+  opacity: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* MEDIA QUERIES For HERO SECTION */
+@media screen and (max-width: 730px) {
+  .contentBody {
+    padding: 20px 3vw;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .avatar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+  .avatar-info {
+    gap: 16px;
+  }
+  .avatar-text {
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #605c5c;
+    }
+  }
+  .edit-profile-btn {
+    align-self: center;
+  }
+  .new-post-btn {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+  .avatar-text {
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+}
 /* Section - grid */
+hr {
+  margin: 20px 0;
+  height: 1.5px;
+  background-color: #212121;
+  opacity: 40%;
+  border: none;
+}
 /**************************************/
 
 /*  Osamudiameh  */
