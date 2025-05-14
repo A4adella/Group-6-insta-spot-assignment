@@ -1,18 +1,21 @@
+*::before,
+*::after,
 * {
-  box-sizing: border-box;
-}
-body {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  width: 100%;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.contentBody {
-  min-height: 100vh;
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
   background-color: #fcf5e5;
-  padding: 30px 5vw;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0px 80px;
 }
 
 /**************************************/
@@ -30,6 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin: 34px 0 20px;
 }
 .avatar-container {
   display: flex;
@@ -54,22 +58,29 @@ body {
   height: 190px;
 }
 .avatar-info {
-  line-height: 0.1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
 }
 .avatar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   h2 {
     font-weight: 500;
     font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: 0%;
   }
   p {
     font-weight: 500;
     font-size: 1rem;
     color: #212121;
     opacity: 70%;
+    line-height: 100%;
+    letter-spacing: 0%;
   }
 }
 .edit-profile-btn {
