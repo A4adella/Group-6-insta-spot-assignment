@@ -18,7 +18,7 @@ This project is a collaborative web page created using **only HTML and CSS**.
 | Idowu Ola Fakomi         | @ola-fakomi     | Gather Assets(Icons and images)|
 | Karima Hassan            | @kareemahdbt    | Gather Assets(universal CSS elements, font families, colors)|
 | Izuchukwu E. Innocent    | @inno-stack     | Header|
-| Wise Enesi               | @gEnesiWise     | Hero section|
+| Wise Enesi               | @EnesiWise      | Hero section|
 | Kosisochukwu Obidiegwu   | @               | Hero Responsive|
 | Osamudiameh Ebhohon      | @sasdogged      | Main section|
 | Tawakalitu Omoloja       | @Lahitan        | Main responsive|
