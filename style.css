@@ -173,6 +173,21 @@ hr {
 /**************************************/
 
 /* oma */
+.site-footer {
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 600px;
+  font-size: 16px;
+  color: #212121;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+}
+
 
 /**************************************/
 /* Media query */
