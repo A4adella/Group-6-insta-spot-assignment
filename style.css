@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: auto;
   padding: 0px 80px;
 }
@@ -21,7 +21,6 @@ body {
 /**************************************/
 /* Header*/
 /**************************************/
-
 /* Innocent */
 header {
   height: 46px;
@@ -35,7 +34,6 @@ header {
 /**************************************/
 /* Section - hero */
 /**************************************/
-
 /* WISE */
 .hero-section {
   display: flex;
@@ -55,7 +53,7 @@ header {
   width: 149px;
   height: 52px;
   cursor: pointer;
-   transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .new-post-btn:hover {
   opacity: 80%;
@@ -166,7 +164,7 @@ hr {
 }
 
 /*  Osamudiameh  */
-section.section-grid{
+section.section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6em;
@@ -174,7 +172,7 @@ section.section-grid{
   border-bottom: 2px solid hsl(0, 0%, 70%);
   padding-bottom: 3em;
 }
-section.section-grid img{
+section.section-grid img {
   border-radius: 8px;
   transition: transform 0.4s ease-in-out;
 }
@@ -182,7 +180,13 @@ section.section-grid img{
 .section-grid img:focus-visible{
   transform: scale(1.04);
 }
-.section-grid .text-icon{
+.val-thorens__img {
+  width: 100%;
+}
+.val-thorens__img img {
+  width: 100%;
+}
+.section-grid .text-icon {
   display: flex;
   justify-content: space-between;
   font-size:20px;
@@ -194,7 +198,6 @@ section.section-grid img{
   transform: scale(1.07);
 }
 /**************************************/
-
 
 /**************************************/
 /* Footer */
@@ -215,7 +218,6 @@ section.section-grid img{
     padding: 10px 15px;
   }
 }
-
 
 /**************************************/
 /* Media query */
