@@ -176,11 +176,22 @@ section.section-grid{
 }
 section.section-grid img{
   border-radius: 8px;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+}
+.section-grid img:hover,
+.section-grid img:focus-visible{
+  transform: scale(1.04);
 }
 .section-grid .text-icon{
   display: flex;
   justify-content: space-between;
+  font-size:20px;
+}
+.text-icon img{
+  transition: transform 0.4s ease-in-out;
+}
+ .text-icon img:hover{
+  transform: scale(1.07);
 }
 /**************************************/
 
