@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: auto;
   padding: 0px 80px;
 }
@@ -21,7 +21,6 @@ body {
 /**************************************/
 /* Header*/
 /**************************************/
-
 /* Innocent */
 header {
   height: 46px;
@@ -35,7 +34,6 @@ header {
 /**************************************/
 /* Section - hero */
 /**************************************/
-
 /* WISE */
 .hero-section {
   display: flex;
@@ -55,10 +53,10 @@ header {
   width: 149px;
   height: 52px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .new-post-btn:hover {
   opacity: 80%;
-  transition: all 0.3s ease-in-out;
 }
 
 .avatar {
@@ -81,6 +79,7 @@ header {
     font-size: 2rem;
     line-height: 100%;
     letter-spacing: 0%;
+    margin-bottom: 10px;
   }
   p {
     font-weight: 500;
@@ -92,8 +91,8 @@ header {
 }
 .edit-profile-btn {
   text-decoration: none;
-  background-color: #fcf5e5;
-  color: #212121;
+  background-color: #e3dccd;
+  color: #1a1a1a;
   opacity: 60%;
   border: none;
   font-family: "Poppins", sans-serif;
@@ -164,9 +163,42 @@ hr {
   opacity: 40%;
   border: none;
 }
-/**************************************/
 
 /*  Osamudiameh  */
+section.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6em;
+  cursor: pointer;
+  border-bottom: 2px solid hsl(0, 0%, 70%);
+  padding-bottom: 3em;
+}
+section.section-grid img {
+  border-radius: 8px;
+  transition: transform 0.4s ease-in-out;
+}
+.section-grid img:hover,
+.section-grid img:focus-visible{
+  transform: scale(1.04);
+}
+.val-thorens__img {
+  width: 100%;
+}
+.val-thorens__img img {
+  width: 100%;
+}
+.section-grid .text-icon {
+  display: flex;
+  justify-content: space-between;
+  font-size:20px;
+}
+.text-icon img{
+  transition: transform 0.4s ease-in-out;
+}
+ .text-icon img:hover{
+  transform: scale(1.07);
+}
+/**************************************/
 
 /**************************************/
 /* Footer */
@@ -175,6 +207,7 @@ hr {
 /* oma */
 .site-footer {
   text-align: center;
+  padding: 15px 20px;
   margin-top: 600px;
   font-size: 16px;
   color: rgba(33, 33, 33, 0.7);
@@ -188,7 +221,6 @@ hr {
     font-size: 12px;
   }
 }
-
 
 /**************************************/
 /* Media query */
