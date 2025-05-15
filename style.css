@@ -187,6 +187,19 @@ section.section-grid img {
   justify-content: space-between;
   margin-top: 12px;
 }
+
+
+/* tawa */
+/* MEDIA QUERIES For GRID SECTION */
+
+@media (max-width: 780px) {
+  section.section-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+
 /**************************************/
 
 /**************************************/
@@ -220,4 +233,4 @@ section.section-grid img {
 
 /* kosi */
 
-/* tawa */
+
