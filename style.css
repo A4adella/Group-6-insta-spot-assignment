@@ -53,12 +53,17 @@ header {
   column-gap: 20px;
 }
 .new-post-btn {
-  background-color: #212121;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  width: 149px;
+  height: 52px;
   color: #fcf5e5;
   border: none;
   border-radius: 8px;
-  width: 149px;
-  height: 52px;
+  background-color: #212121;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -66,6 +71,12 @@ header {
   opacity: 80%;
 }
 
+.new-post-btn span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
 .avatar {
   width: 190px;
   height: 190px;
@@ -164,7 +175,6 @@ header {
 }
 
 hr {
-  margin: 20px 0;
   height: 1.5px;
   background-color: #212121;
   opacity: 40%;
@@ -179,8 +189,7 @@ section.section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6em;
-  border-bottom: 2px solid hsl(0, 0%, 70%);
-  padding-bottom: 3em;
+  margin: 20px 0 40px;
 }
 section.section-grid img {
   border-radius: 8px;
