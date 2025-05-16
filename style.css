@@ -198,6 +198,23 @@ section.section-grid img {
  .text-icon img:hover{
   transform: scale(1.07);
 }
+
+
+/* tawa */
+/* MEDIA QUERIES For GRID SECTION */
+
+@media (max-width: 780px) {
+  section.section-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .section-grid .text-icon {
+    font-size:14px;
+    font-weight: 500;
+  }
+}
+
+
+
 /**************************************/
 
 /**************************************/
@@ -233,4 +250,4 @@ section.section-grid img {
 
 /* kosi */
 
-/* tawa */
+
