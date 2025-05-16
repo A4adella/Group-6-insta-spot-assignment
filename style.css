@@ -18,6 +18,13 @@ body {
   padding: 0px 80px;
 }
 
+/* Media query */
+@media (max-width: 500px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 /**************************************/
 /* Header*/
 /**************************************/
@@ -91,7 +98,7 @@ header {
 }
 .edit-profile-btn {
   text-decoration: none;
-  background-color: #e3dccd;
+  background-color: transparent;
   color: #1a1a1a;
   opacity: 60%;
   border: none;
@@ -155,7 +162,7 @@ header {
     }
   }
 }
-/* Section - grid */
+
 hr {
   margin: 20px 0;
   height: 1.5px;
@@ -164,12 +171,14 @@ hr {
   border: none;
 }
 
+/**************************************/
+/* Section - grid */
+/**************************************/
 /*  Osamudiameh  */
 section.section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6em;
-  cursor: pointer;
   border-bottom: 2px solid hsl(0, 0%, 70%);
   padding-bottom: 3em;
 }
@@ -178,7 +187,7 @@ section.section-grid img {
   transition: transform 0.4s ease-in-out;
 }
 .section-grid img:hover,
-.section-grid img:focus-visible{
+.section-grid img:focus-visible {
   transform: scale(1.04);
 }
 .val-thorens__img {
@@ -186,36 +195,38 @@ section.section-grid img {
 }
 .val-thorens__img img {
   width: 100%;
+  display: block;
 }
 .section-grid .text-icon {
   display: flex;
   justify-content: space-between;
-  font-size:20px;
+  font-size: 20px;
+  margin-top: 12px;
 }
-.text-icon img{
+.text-icon svg {
   transition: transform 0.4s ease-in-out;
+  cursor: pointer;
+  fill: #212121;
+  opacity: 0.4;
 }
- .text-icon img:hover{
+.text-icon svg:hover {
   transform: scale(1.07);
+  opacity: 1;
 }
-
 
 /* tawa */
 /* MEDIA QUERIES For GRID SECTION */
+@media (max-width: 1000px) {
+  .section-grid .text-icon {
+    font-size: 16px;
+  }
+}
 
 @media (max-width: 780px) {
   section.section-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  .section-grid .text-icon {
-    font-size:14px;
-    font-weight: 500;
-  }
 }
-
-
-
-/**************************************/
 
 /**************************************/
 /* Footer */
@@ -225,29 +236,7 @@ section.section-grid img {
 .site-footer {
   text-align: center;
   font-size: 16px;
-  color: #212121B2;
-  padding: 104px 16px;
-  top: 1340px;
-  left: 668px;
+  color: #212121b2;
+  padding: 60px 0;
   font-weight: 400;
 }
-
-@media (max-width: 600px) {
-  .site-footer {
-    font-size: 16px;
-    padding: 104px 16px;
-  }
-}
-
-/**************************************/
-/* Media query */
-/**************************************/
-@media (max-width: 400px) {
-  .container {
-    padding: 0 16px;
-  }
-}
-
-/* kosi */
-
-
