@@ -6,12 +6,12 @@ This project is a collaborative web page created using **only HTML and CSS**.
 
 ## 🚀 Live Demo
 
-[Spot-app](https://group-6-insta-spot-assignment.vercel.app/)
+[Spots-app](https://group-6-insta-spot-assignment.vercel.app/)
 
 ## 👥 Team Members & Contributions
 
-| Name              | GitHub Username     | Contribution Summary                     |
-|-------------------|---------------------|------------------------------------------|
+| Name                     | GitHub Username | Contribution Summary                     |
+|--------------------------|-----------------|------------------------------------------|
 | Adella Emmanuel Idemetuk | @A4adella       | Responsible for creating the GitHub repository, configuration and hosting|
 | Olaide Alabi             | @holayide       | Structuring the work, assigning roles, and monitoring workflow|
 | Ezeah Ginika             | @kachi33        | Documentation|
