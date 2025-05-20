@@ -199,10 +199,10 @@ section.section-grid img {
 .section-grid img:focus-visible {
   transform: scale(1.04);
 }
-.val-thorens__img {
+.cardImg-div {
   width: 100%;
 }
-.val-thorens__img img {
+.cardImg-div img {
   width: 100%;
   display: block;
 }
