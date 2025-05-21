@@ -3,37 +3,31 @@ const cardsData = [
   {
     image: "images/val-thorens.png",
     title: "Val Thorens",
-    icon: "",
     liked: false,
   },
   {
     image: "images/restaurant-terrace.png",
     title: "Restaurant-terrace",
-    icon: "",
     liked: false,
   },
   {
     image: "images/an-outdoor-cafe.png",
     title: "An outdoor cafe",
-    icon: "",
     liked: false,
   },
   {
     image: "images/long-bridge.png",
     title: "A very long bridge over the forest...",
-    icon: "",
     liked: false,
   },
   {
     image: "images/tunnel.png",
     title: "Tunnel with morning light",
-    icon: "",
     liked: false,
   },
   {
     image: "images/mountain-house.png",
     title: "Mountain house",
-    icon: "",
     liked: false,
   },
 ];
@@ -41,10 +35,7 @@ const cardsData = [
 const cardContainer = document.getElementById("card-container");
 
 cardsData.forEach((card) => {
-  const cardDiv = document.createElement("div");
-  cardDiv.classList.add("card");
-
-  cardDiv.innerHTML = `
+  cardContainer.innerHTML += `
   <div class="each-card">
     <div class="cardImg-div">
         <img src="${card.image}" alt="${card.title}" class="card-img" />
@@ -63,10 +54,7 @@ cardsData.forEach((card) => {
       </svg>
     </div> 
   </div>`;
-
-  cardContainer.appendChild(cardDiv);
 });
-// END OF WISE SIDE
 
 // Kosi
 
