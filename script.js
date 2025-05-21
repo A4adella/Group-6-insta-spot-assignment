@@ -1,32 +1,32 @@
 // CARD RENDERING --> WISE
 const cardsData = [
   {
-    image: "images/val-thorens.png",
+    image: "./images/val-thorens.png",
     title: "Val Thorens",
     liked: false,
   },
   {
-    image: "images/restaurant-terrace.png",
+    image: "./images/restaurant-terrace.png",
     title: "Restaurant-terrace",
     liked: false,
   },
   {
-    image: "images/an-outdoor-cafe.png",
+    image: "./images/an-outdoor-cafe.png",
     title: "An outdoor cafe",
     liked: false,
   },
   {
-    image: "images/long-bridge.png",
+    image: "./images/long-bridge.png",
     title: "A very long bridge over the forest...",
     liked: false,
   },
   {
-    image: "images/tunnel.png",
+    image: "./images/tunnel.png",
     title: "Tunnel with morning light",
     liked: false,
   },
   {
-    image: "images/mountain-house.png",
+    image: "./images/mountain-house.png",
     title: "Mountain house",
     liked: false,
   },
