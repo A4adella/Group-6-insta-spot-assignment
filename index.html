@@ -94,6 +94,41 @@
           </div>
         </div>
 
+        <!-- ****** MODAL OVERLAY******-->
+
+        <div id="modalOverlay" class="modal-overlay hidden">
+          <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <h2>Edit Profile</h2>
+            <form>
+              <label for="username">Name:</label>
+              <input type="text" id="username" name="username" required />
+
+              <label for="profession">Profession:</label>
+              <input type="text" id="profession" name="profession" required />
+
+              <label for="profileImage">Profile Image:</label>
+              <input
+                type="file"
+                id="profileImage"
+                name="profileImage"
+                accept="image/*"
+              />
+              <img
+                id="imagePreview"
+                src=""
+                alt="Image Preview"
+              />
+
+              <button type="submit" class="save-changes-btn">
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- ****** MODAL OVERLAY ENDS HERE ******-->
+      
+
         <button class="new-post-btn">
           <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
           <span>New Post</span>
