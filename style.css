@@ -206,6 +206,19 @@ section.section-grid img {
   width: 100%;
   display: block;
 }
+.val-thorens:focus,
+.restaurant-terrace:focus,
+.outdoor-cafe:focus,
+.long-bridge:focus,
+.tunnel:focus,
+.mountain-house:focus {
+  outline: 4px solid #552424; 
+  color:#e58c8c;
+  background-color: #722c2c;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .section-grid .text-icon {
   display: flex;
   justify-content: space-between;
@@ -222,7 +235,6 @@ section.section-grid img {
   transform: scale(1.07);
   opacity: 1;
 }
-
 /* tawa */
 /* MEDIA QUERIES For GRID SECTION */
 @media (max-width: 1000px) {
