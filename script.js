@@ -60,7 +60,43 @@ cardsData.forEach((card) => {
 
 // Oma
 
-// Tawa
+// EDIT PROFILE MODAL --> TAWA
+
+  const openBtn = document.querySelector('.edit-profile-btn');
+  const modalOverlay = document.querySelector('#modalOverlay');
+  const closeBtn = document.querySelector('#closeModalBtn');
+  const imageInput = document.getElementById('profileImage');
+  const imagePreview = document.getElementById('imagePreview');
+
+  openBtn.addEventListener('click', () => {
+    modalOverlay.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modalOverlay.classList.add('hidden');
+  });
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      modalOverlay.classList.add('hidden');
+    }
+  });
+  
+  // IMAGE PREVIEW
+  imageInput.addEventListener('change', function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+
+    reader.addEventListener('load', function () {
+      imagePreview.src = reader.result;
+      imagePreview.style.display = 'block';
+    });
+
+    reader.readAsDataURL(file);
+  }
+});
+// END OF EDIT PROFILE MODAL BY TAWA
 
 // Osas
 
