@@ -38,6 +38,7 @@
     <!-- CSS FILE -->
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
     <header>
       <!-- Innocent -->
@@ -133,13 +134,35 @@
         </div>
         <!-- ****** MODAL OVERLAY ENDS HERE ******-->
 
-        <button class="new-post-btn">
+        <!--Ola: I added a class tag to this button-->
+        <button id="newPostBtn" class="newPostBtn">
           <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
           <span>New Post</span>
         </button>
       </section>
 
       <hr />
+
+      <!-- Add New Post Modal (by Ola) -->
+      <div id="newPostModal" class="newPostModal">
+        <div class="newPostModal-content">
+          <span id="newPostcloseBtn" class="newPostcloseBtn">&times;</span>
+          <h2>New post</h2>
+
+          <!-- Post Title -->
+          <div class="form-group">
+            <label for="postTitle">Post title</label>
+            <input type="text" id="postTitle" placeholder="Input title" />
+          </div>
+
+          <!-- <label for="imageUpload">Upload Image</label> -->
+          <div class="upload-area">
+            <input type="file" id="imageUpload" />
+          </div>
+
+          <button class="upload-btn">Upload post</button>
+        </div>
+      </div>
 
       <!-- Osamudiameh -->
       <section class="section-grid" id="card-container">

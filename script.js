@@ -121,7 +121,29 @@ imageModal.addEventListener("click", function (e) {
   }
 });
 
-// Ola
+// NEW POST MODAL --- Ola
+
+// Get elements
+const newPostModal = document.getElementById("newPostModal");
+const newPostBtn = document.getElementById("newPostBtn");
+const newPostcloseBtn = document.getElementById("newPostcloseBtn");
+
+// Open modal
+newPostBtn.addEventListener("click", () => {
+  newPostModal.style.display = "block";
+});
+
+// Close modal
+newPostcloseBtn.addEventListener("click", () => {
+  newPostModal.style.display = "none";
+});
+
+// Close when clicking outside modal content
+window.addEventListener("click", (e) => {
+  if (e.target == modal) {
+    newPostModal.style.display = "none";
+  }
+});
 
 // Adella
 
@@ -131,21 +153,26 @@ function saveChanges() {
   const name = document.getElementById("userName").value;
   const profession = document.getElementById("professionInput").value;
   const imageInput = document.getElementById("imageInput");
-  // Capitalize the first letter of the name and profession
+
+  // Capitalize the first letter of each word
   function toTitleCase(str) {
-    return str.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    return str.replace(/\b\w/g, function (txt) {
+      return txt.toUpperCase();
     });
   }
+  const capitalizedName = toTitleCase(name);
+  const capitalizedProfession = toTitleCase(profession);
 
-  // Update the profile name and profession
+  // Update the profile username and profession
   if (name) {
-    document.getElementById("profileName").textContent = name;
+    document.getElementById("profileName").textContent = capitalizedName;
   }
 
   if (profession) {
-    document.getElementById("profileProfession").textContent = profession;
+    document.getElementById("profileProfession").textContent =
+      capitalizedProfession;
   }
+
   // Update the profile image
   if (imageInput.files && imageInput.files[0]) {
     const reader = new FileReader();
@@ -154,8 +181,14 @@ function saveChanges() {
     };
     reader.readAsDataURL(imageInput.files[0]);
   }
+  // updated image uses the diffult image border-radius
+  document.getElementById("profileImage").style.borderRadius = "5%";
+  // updated image to maintain shape and well fitted without distortion or stretching
+  document.getElementById("profileImage").style.objectFit = "cover";
+
   // Close the modal
   document.getElementById("modalOverlay").classList.add("hidden");
+
   // Clear the input fields
   document.getElementById("userName").value = "";
   document.getElementById("professionInput").value = "";
