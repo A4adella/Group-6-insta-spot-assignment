@@ -1,32 +1,32 @@
 // CARD RENDERING --> WISE
 const cardsData = [
   {
-    image: "./Images/val-thorens.png",
+    image: "./images/val-thorens.png",
     title: "Val Thorens",
     liked: false,
   },
   {
-    image: "./Images/restaurant-terrace.png",
+    image: "./images/restaurant-terrace.png",
     title: "Restaurant-terrace",
     liked: false,
   },
   {
-    image: "./Images/an-outdoor-cafe.png",
+    image: "./images/an-outdoor-cafe.png",
     title: "An outdoor cafe",
     liked: false,
   },
   {
-    image: "./Images/long-bridge.png",
+    image: "./images/long-bridge.png",
     title: "A very long bridge over the forest...",
     liked: false,
   },
   {
-    image: "./Images/tunnel.png",
+    image: "./images/tunnel.png",
     title: "Tunnel with morning light",
     liked: false,
   },
   {
-    image: "./Images/mountain-house.png",
+    image: "./images/mountain-house.png",
     title: "Mountain house",
     liked: false,
   },
@@ -115,11 +115,11 @@ closeImageModal.addEventListener("click", function () {
   imageModal.classList.add("hidden");
 });
 
-imageModal.addEventListener("click", function(e) {
-  if(e.target === imageModal) {
+imageModal.addEventListener("click", function (e) {
+  if (e.target === imageModal) {
     imageModal.classList.add("hidden");
   }
-})
+});
 
 // Ola
 
