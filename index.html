@@ -94,6 +94,36 @@
           </div>
         </div>
 
+        <!-- ****** MODAL OVERLAY******-->
+
+        <div id="modalOverlay" class="modal-overlay hidden">
+          <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <h2>Edit Profile</h2>
+            <form>
+              <label for="username">Name:</label>
+              <input type="text" id="username" name="username" required />
+
+              <label for="profession">Profession:</label>
+              <input type="text" id="profession" name="profession" required />
+
+              <label for="profileImage">Profile Image:</label>
+              <input
+                type="file"
+                id="profileImage"
+                name="profileImage"
+                accept="image/*"
+              />
+              <img id="imagePreview" src="" alt="Image Preview" />
+
+              <button type="submit" class="save-changes-btn">
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- ****** MODAL OVERLAY ENDS HERE ******-->
+
         <button class="new-post-btn">
           <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
           <span>New Post</span>
@@ -104,14 +134,7 @@
 
       <!-- Osamudiameh -->
       <section class="section-grid">
-        <div
-          class="val-thorens"
-          id="card-1"
-          data-focusable
-          tabindex="0"
-          role="button"
-          aria-label="view post: val thorens"
-        >
+        <div class="val-thorens">
           <div class="val-thorens__img">
             <img src="./Images/val-thorens.png" alt="val thorens" />
           </div>
@@ -132,13 +155,7 @@
           </div>
         </div>
 
-        <div
-          class="restaurant-terrace"
-          data-focusable
-          tabindex="0"
-          role="button"
-          aria-label="view post: restaurant terrace"
-        >
+        <div class="restaurant-terrace">
           <div class="val-thorens__img">
             <img
               src="./Images/restaurant-terrace.png"
@@ -162,13 +179,7 @@
           </div>
         </div>
 
-        <div
-          class="outdoor-cafe"
-          data-focusable
-          tabindex="0"
-          role="button"
-          aria-label="view post: outdoor cafe"
-        >
+        <div class="outdoor-cafe">
           <div class="val-thorens__img">
             <img
               src="./Images/an-outdoor-cafe.png"
@@ -192,13 +203,7 @@
           </div>
         </div>
 
-        <div
-          class="long-bridge"
-          data-focusable
-          tabindex="0"
-          role="button"
-          aria-label="view post: long bridge"
-        >
+        <div class="long-bridge">
           <div class="val-thorens__img">
             <img
               src="./Images/long-bridge.png"
@@ -222,13 +227,7 @@
           </div>
         </div>
 
-        <div
-          class="tunnel"
-          data-focusable
-          tabindex="0"
-          role="button"
-          aria-label="view post: tunnel"
-        >
+        <div class="tunnel">
           <div class="val-thorens__img">
             <img src="./Images/tunnel.png" alt="an outdoor tunnel" />
           </div>
@@ -249,13 +248,7 @@
           </div>
         </div>
 
-        <div
-          class="mountain-house"
-          data-focusable
-          tabindex="0"
-          role="button"
-          aria-label="view post: mountain house"
-        >
+        <div class="mountain-house">
           <div class="val-thorens__img">
             <img src="./Images/mountain-house.png" alt="snowy mountain house" />
           </div>
@@ -274,7 +267,7 @@
               ></path>
             </svg>
           </div>
-        </div>
+        </div> -->
       </section>
 
       <hr />
@@ -283,6 +276,6 @@
     <!-- oma -->
     <footer class="site-footer">2023 &copy; Spots</footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
