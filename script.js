@@ -70,10 +70,14 @@ const imagePreview = document.getElementById("imagePreview");
 
 openBtn.addEventListener("click", () => {
   modalOverlay.classList.remove("hidden");
+  const firstInput = document.querySelector("#username");
+ firstInput.focus(); // Set focus to the first input field
 });
 
 closeBtn.addEventListener("click", () => {
   modalOverlay.classList.add("hidden");
+
+  if (openBtn) openBtn.focus(); // Return focus to the button that opened the modal
 });
 
 modalOverlay.addEventListener("click", (e) => {
@@ -103,6 +107,19 @@ imageInput.addEventListener("change", function () {
 // Ola
 
 // Adella
+
+//Esc key to close modal
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    modalOverlay.classList.add("hidden");
+  }
+});
+
+
+
+
+
+
 
 // Innocent
 
