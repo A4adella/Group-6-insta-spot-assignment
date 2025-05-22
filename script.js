@@ -125,7 +125,53 @@ imageModal.addEventListener("click", function(e) {
 
 // Adella
 
-// Innocent
+// EDIT PROFILE FUNCTIONALITY --> INNOCENT
+// Function to save changes made in the modal
+function saveChanges() {
+  const name = document.getElementById("userName").value;
+  const profession = document.getElementById("professionInput").value;
+  const imageInput = document.getElementById("imageInput");
+  // Capitalize the first letter of the name and profession
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Update the profile name and profession
+  if (name) {
+    document.getElementById("profileName").textContent = name;
+  }
+
+  if (profession) {
+    document.getElementById("profileProfession").textContent = profession;
+  }
+  // Update the profile image
+  if (imageInput.files && imageInput.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("profileImage").src = e.target.result;
+    };
+    reader.readAsDataURL(imageInput.files[0]);
+  }
+  // Close the modal
+  document.getElementById("modalOverlay").classList.add("hidden");
+  // Clear the input fields
+  document.getElementById("userName").value = "";
+  document.getElementById("professionInput").value = "";
+  document.getElementById("imageInput").value = "";
+  document.getElementById("imagePreview").src = "";
+  document.getElementById("imagePreview").style.display = "none";
+
+  // Reset the image preview
+  const imagePreview = document.getElementById("imagePreview");
+  imagePreview.src = "";
+  imagePreview.style.display = "none";
+  // Reset the input field
+  const imageInputField = document.getElementById("imageInput");
+  imageInputField.value = "";
+}
+// END OF EDIT PROFILE FUNCTIONALITY BY INNOCENT
 
 // Kachi
 
