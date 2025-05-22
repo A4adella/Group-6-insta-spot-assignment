@@ -141,7 +141,7 @@ function saveChanges() {
   const capitalizedName = toTitleCase(name);
   const capitalizedProfession = toTitleCase(profession);
 
-  // Update the profile name and profession
+  // Update the profile username and profession
   if (name) {
     document.getElementById("profileName").textContent = capitalizedName;
   }
