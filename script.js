@@ -102,7 +102,28 @@ imageInput.addEventListener("change", function () {
 });
 // END OF EDIT PROFILE MODAL BY TAWA
 
-// Osas
+// Osamudiaameh Image Preview Overlay
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeImageModal = document.getElementById("closeImageModal");
+
+cardContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("card-img")) {
+    modalImage.src = e.target.src;
+    modalImage.alt = e.target.alt;
+    imageModal.classList.remove("hidden");
+  }
+});
+
+closeImageModal.addEventListener("click", function () {
+  imageModal.classList.add("hidden");
+});
+
+imageModal.addEventListener("click", function(e) {
+  if(e.target === imageModal) {
+    imageModal.classList.add("hidden");
+  }
+})
 
 // Ola
 
