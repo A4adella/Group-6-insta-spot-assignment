@@ -121,7 +121,27 @@ imageModal.addEventListener("click", function(e) {
   }
 })
 
-// Ola
+// NEW POST MODAL --- Ola
+
+// Get elements
+const newPostModal = document.getElementById("newPostModal");
+const newPostBtn = document.getElementById("newPostBtn");
+const newPostcloseBtn = document.getElementById("newPostcloseBtn");
+
+// Open modal
+newPostBtn.addEventListener("click", () => {newPostModal.style.display = "block";});
+
+// Close modal
+newPostcloseBtn.addEventListener("click", () => {newPostModal.style.display = "none";});
+
+// Close when clicking outside modal content
+window.addEventListener("click", (e) => {
+  if (e.target == modal) {
+    newPostModal.style.display = "none";
+  }
+});
+
+
 
 // Adella
 
