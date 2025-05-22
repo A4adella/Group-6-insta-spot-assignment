@@ -21,7 +21,7 @@ const cardsData = [
     liked: false,
   },
   {
-    image: "./images/Mask group-1.png",
+    image: "./Images/Mask group-1.png",
     title: "Tunnel with morning light",
     liked: false,
   },
