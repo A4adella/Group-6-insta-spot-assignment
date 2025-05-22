@@ -53,6 +53,7 @@
       <section class="hero-section">
         <div class="avatar-container">
           <img
+            id="profileImage"
             class="avatar"
             src="./Images/bessie_image.png"
             alt="avatar-image"
@@ -60,8 +61,8 @@
 
           <div class="avatar-info">
             <div class="avatar-text">
-              <h2>Bessie Coleman</h2>
-              <p>Civil Aviator</p>
+              <h2 id="profileName">Bessie Coleman</h2>
+              <p id="profileProfession">Civil Aviator</p>
             </div>
 
             <button class="edit-profile-btn">
@@ -102,21 +103,29 @@
             <h2>Edit Profile</h2>
             <form>
               <label for="username">Name:</label>
-              <input type="text" id="username" name="username" required />
+              <input type="text" id="userName" name="username" required />
 
               <label for="profession">Profession:</label>
-              <input type="text" id="profession" name="profession" required />
-
+              <input
+                type="text"
+                id="professionInput"
+                name="profession"
+                required
+              />
               <label for="profileImage">Profile Image:</label>
               <input
                 type="file"
-                id="profileImage"
+                id="imageInput"
                 name="profileImage"
                 accept="image/*"
               />
               <img id="imagePreview" src="" alt="Image Preview" />
 
-              <button type="submit" class="save-changes-btn">
+              <button
+                type="submit"
+                onclick="saveChanges()"
+                class="save-changes-btn"
+              >
                 Save Changes
               </button>
             </form>
@@ -133,9 +142,10 @@
       <hr />
 
       <!-- Osamudiameh -->
-      <section class="section-grid">
-        <div class="val-thorens">
-          <div class="val-thorens__img">
+      <section class="section-grid" id="card-container">
+        <!-- Wise: i didn't wanna delete the hardcoded html so i just commented it out below -->
+        <!-- <div class="each-card">
+          <div class="cardImg-div">
             <img src="./Images/val-thorens.png" alt="val thorens" />
           </div>
 
@@ -267,7 +277,12 @@
               ></path>
             </svg>
           </div>
-        </div> 
+        </div> -->
+
+        <div id="imageModal" class="hidden modal-overlay">
+          <span id="closeImageModal" class="close-btn">&times;</span>
+          <img id="modalImage" src="" alt="Preview" class="modal-img">
+        </div>
       </section>
 
       <hr />

@@ -292,6 +292,7 @@ section.section-grid img {
 .section-grid img:hover,
 .section-grid img:focus-visible {
   transform: scale(1.04);
+  cursor: pointer;
 }
 .cardImg-div {
   width: 100%;
@@ -329,6 +330,36 @@ section.section-grid img {
   transform: scale(1.07);
   opacity: 1;
 }
+/* Image Preview Overlay Styles */
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-img{
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+.close-btn{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+
 /* tawa */
 /* MEDIA QUERIES For GRID SECTION */
 @media (max-width: 1000px) {
