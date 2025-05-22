@@ -133,6 +133,11 @@ function saveChanges() {
     };
     reader.readAsDataURL(imageInput.files[0]);
   }
+  // updated image uses the diffult image border-radius
+  document.getElementById("profileImage").style.borderRadius = "5%";
+  // updated image to maintain shape and well fitted without distortion or stretching
+  document.getElementById("profileImage").style.objectFit = "cover";
+
   // Close the modal
   document.getElementById("modalOverlay").classList.add("hidden");
   // Clear the input fields
