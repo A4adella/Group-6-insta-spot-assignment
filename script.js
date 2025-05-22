@@ -129,14 +129,19 @@ imageModal.addEventListener("click", function(e) {
 
 // Adella
 
-//Esc key to close modal
+//Esc key to close edit profile modal
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     modalOverlay.classList.add("hidden");
   }
 });
 
-
+//Esc key to close image modal
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    imageModal.classList.add("hidden");
+  }
+});
 
 
 
