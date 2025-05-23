@@ -2,7 +2,7 @@
 
 ## 📁 Project Overview
 
-This project is a collaborative web page created using **only HTML and CSS**. 
+This project is a collaborative web page created using **only HTML, CSS and JavaScript**. 
 
 ## 🚀 Live Demo
 
@@ -10,51 +10,65 @@ This project is a collaborative web page created using **only HTML and CSS**.
 
 ## 👥 Team Members & Contributions
 
-| Name                     | GitHub Username | Contribution Summary                     |
-|--------------------------|-----------------|------------------------------------------|
-| Adella Emmanuel Idemetuk | @A4adella       | Responsible for creating the GitHub repository, configuration and hosting|
-| Olaide Alabi             | @holayide       | Structuring the work, assigning roles, and monitoring workflow|
-| Ezeah Ginika             | @kachi33        | Documentation|
-| Idowu Ola Fakomi         | @ola-fakomi     | Gather Assets(Icons and images)|
-| Karima Hassan            | @kareemahdbt    | Gather Assets(universal CSS elements, font families, colors)|
-| Izuchukwu E. Innocent    | @inno-stack     | Header|
-| Wise Enesi               | @EnesiWise      | Hero section|
-| Kosisochukwu Obidiegwu   | @lotathebaby    | Hero Responsive|
-| Osamudiameh Ebhohon      | @sasdogged      | Main section|
-| Tawakalitu Omoloja       | @Lahitan        | Main responsive|
-| Uzoma Okorie Osi         | @Uzoma-oma      | Footer|
+| Name                     | GitHub Username | 
+|--------------------------|-----------------|
+| Adella Emmanuel Idemetuk | @A4adella       | 
+| Olaide Alabi             | @holayide       | 
+| Ezeah Ginika             | @kachi33        | 
+| Idowu Ola Fakomi         | @ola-fakomi     | 
+| Karima Hassan            | @kareemahdbt    | 
+| Izuchukwu E. Innocent    | @inno-stack     | 
+| Wise Enesi               | @EnesiWise      | 
+| Kosisochukwu Obidiegwu   | @lotathebaby    | 
+| Osamudiameh Ebhohon      | @sasdogged      | 
+| Tawakalitu Omoloja       | @Lahitan        | 
+| Uzoma Okorie Osi         | @Uzoma-oma      | 
 
 
 ## 🧾 Contribution Guidelines
 
-- Clone the repository 
-   ```bash
-   git clone https://github.com/A4adella/Group-6-insta-spot-assignment/
-   ```
+Since we all are already have local copies of the project, we can all follow these steps:
 
-- Pull the latest changes to avoid pushing conflicts.
-    ```bash
-    git pull origin main
-    ```
+1. Firstly pull recent changes from main while still on the main branch 
 
-- Create a new branch.
-    ```bash
-    # Name it based on your task (e.g., feature/responsive-main)
+```bash
+git checkout main
+git pull origin main
 
-    git checkout -b feature/responsive-main
-    ```
+```
 
-- Make your changes and use clear commit messages.
-    ```bash
-    # Stage and commit your changes
-    git add .
-    git commit -m "Added responsieviness to main section"
+2. Checkout to your dev branch following the proper name conventions 
 
-    # Then Push your commit 
-    git push origin feature/responsive-main
-    ```
+```bash
+git checkout branch/name #if it already exists
 
-- Finally Create a Pull Request (PR)
+or 
+
+git checkout -b branch/name #if you're creating a new branch 
+```
+
+3. You can make your changes, stage(git add) and commit 
+
+```bash
+git add .
+git commit -m "a good commit message"
+
+```
+
+4. When you’re ready to push to remote branch, firstly pull from the main branch into your own branch to be up to date.
+
+It’s important you sync your branch with main before pushing - If not you might not be able to merge your PR 
+
+```bash
+git fetch origin
+git pull origin main 
+```
+
+5. Finally push to your remote branch and raise a PR
+
+```bash
+git push origin branch/name 
+```
 
 ## 🛠️ How to Run
 
