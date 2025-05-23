@@ -18,6 +18,17 @@ body {
   padding: 0px 80px;
 }
 
+.heart-icon {
+  fill: gray;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.heart-icon.liked {
+  fill: red;
+}
+
+
 /* Media query */
 @media (max-width: 500px) {
   .container {
