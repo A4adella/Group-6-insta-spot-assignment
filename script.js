@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", () => {
         card.style.boxShadow = "none";
         card.style.backgroundColor = "transparent";
         card.style.outline = "none";
-        card.style.color = " #212121";
+        card.style.color = " #212121"
       };
 
       // Event listeners
