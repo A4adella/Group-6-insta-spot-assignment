@@ -60,89 +60,68 @@ cardsData.forEach((card) => {
 // Kosi
 
 // Oma
-
 window.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll("[data-focusable]");
+  const cards = document.querySelectorAll(".each-card");
 
-  // Focus the first one
   if (cards.length > 0) {
-    cards[0].focus();
-  }
+    cards.forEach((card) => {
+      // Add accessibility attributes
+      card.setAttribute("role", "button");
+      const title = card.querySelector("p")?.textContent?.trim() || "Card";
+      card.setAttribute("aria-label", `Card: ${title}`);
 
-  // Add hover-to-focus
-  cards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      card.focus();
+      // Make card focusable
+      card.setAttribute("tabindex", "0");
 
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault(); // Stop space from scrolling
+      // Apply focus visual style
+      const applyFocusStyle = () => {
+        card.style.boxShadow = "0 0 0 3px #722c2c";
+        card.style.borderRadius = "8px";
+        card.style.backgroundColor = " #722c2c";
+        card.style.outline = "4px solid #552424";
+        card.style.color = " #e58c8c";
+      };
+
+      // Remove all focus visual styles
+      const removeFocusStyle = () => {
+        card.style.boxShadow = "none";
+        card.style.backgroundColor = "transparent";
+        card.style.outline = "none";
+        card.style.color = " #212121";
+      };
+
+      // Apply/remove on focus/blur
+      card.addEventListener("focus", applyFocusStyle);
+      card.addEventListener("blur", removeFocusStyle);
+
+      // Mouse enters: apply focus
+      card.addEventListener("mouseenter", () => card.focus());
+
+      // Mouse leaves: blur (which triggers style removal)
+      card.addEventListener("mouseleave", () => {
+        if (document.activeElement === card) {
+          card.blur();
         }
       });
-    });
-  });
-});
 
-
-// EDIT PROFILE MODAL --> TAWA
-const openBtn = document.querySelector(".edit-profile-btn");
-const modalOverlay = document.querySelector("#modalOverlay");
-const closeBtn = document.querySelector("#closeModalBtn");
-const imageInput = document.getElementById("profileImage");
-const imagePreview = document.getElementById("imagePreview");
-
-openBtn.addEventListener("click", () => {
-  modalOverlay.classList.remove("hidden");
-});
-
-closeBtn.addEventListener("click", () => {
-  modalOverlay.classList.add("hidden");
-});
-
-modalOverlay.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) {
-    modalOverlay.classList.add("hidden");
-  }
-});
-
-// IMAGE PREVIEW
-imageInput.addEventListener("change", function () {
-  const file = this.files[0];
-  if (file) {
-    const reader = new FileReader();
-
-    reader.addEventListener("load", function () {
-      imagePreview.src = reader.result;
-      imagePreview.style.display = "block";
+      // Mouse click: also focuses card
+      card.addEventListener("click", () => card.focus());
     });
 
-    reader.readAsDataURL(file);
+    // Autofocus the first card
+    cards[0].focus();
+
+    // Blur any focused card when Tab is pressed
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        const active = document.activeElement;
+        if (active && active.classList.contains("each-card")) {
+          active.blur(); // Triggers removeFocusStyle
+        }
+      }
+    });
   }
 });
-// END OF EDIT PROFILE MODAL BY TAWA
-
-// Osamudiaameh Image Preview Overlay
-const imageModal = document.getElementById("imageModal");
-const modalImage = document.getElementById("modalImage");
-const closeImageModal = document.getElementById("closeImageModal");
-
-cardContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("card-img")) {
-    modalImage.src = e.target.src;
-    modalImage.alt = e.target.alt;
-    imageModal.classList.remove("hidden");
-  }
-});
-
-closeImageModal.addEventListener("click", function () {
-  imageModal.classList.add("hidden");
-});
-
-imageModal.addEventListener("click", function(e) {
-  if(e.target === imageModal) {
-    imageModal.classList.add("hidden");
-  }
-})
 
 // Ola
 
