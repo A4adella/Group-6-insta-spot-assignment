@@ -232,16 +232,16 @@ window.addEventListener("click", (e) => {
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     modalOverlay.classList.add("hidden");
+
+    //Esc key to close image modal
+ imageModal.classList.add("hidden");
+ 
+   //Esc key to close new post modal
+   newPostModal.style.display = "none";
   }
 });
 
-//Esc key to close image modal
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    imageModal.classList.add("hidden");
-  }
-});
-
+//End of Esc key to close modals by Adella
 
 
 
