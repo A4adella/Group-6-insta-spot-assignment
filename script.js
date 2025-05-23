@@ -60,30 +60,22 @@ function createCard(title, imageUrl) {
 cardsData.forEach(
   (card) => (cardContainer.innerHTML += createCard(card.title, card.image))
 );
+
+attachHeartClickListeners();
 // END OF CARD RENDERING  BY WISE
 
-// Kosi
-document.addEventListener("DOMContentLoaded", () => {
+function attachHeartClickListeners() {
   const heartIcons = document.querySelectorAll(".heart-icon");
 
   heartIcons.forEach((icon) => {
     icon.addEventListener("click", () => {
       icon.classList.toggle("liked");
-    });
-  });
-});
 
-// Wait a moment for DOM to be ready (if this runs before cards are rendered)
-setTimeout(() => {
-  const heartIcons = document.querySelectorAll(".heart-icon");
-
-  heartIcons.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      const currentColor = icon.getAttribute("fill");
+      const currentColor = icon.getAttribute("fill") || "gray";
       icon.setAttribute("fill", currentColor === "red" ? "gray" : "red");
     });
   });
-}, 0);
+}
 // Oma
 
 // EDIT PROFILE MODAL --> TAWA
@@ -167,7 +159,7 @@ newPostcloseBtn.addEventListener("click", () => {
 
 // Close when clicking outside modal content
 window.addEventListener("click", (e) => {
-  if (e.target == modal) {
+  if (e.target === newPostModal) {
     newPostModal.style.display = "none";
   }
 });
@@ -256,6 +248,7 @@ uploadBtn.addEventListener("click", () => {
   const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
 
   cardContainer.insertAdjacentHTML("beforeend", newCard);
+  attachHeartClickListeners();
 
   // Reset
   postTitle.value = "";
@@ -271,3 +264,4 @@ function capitalizedFirstLetter(text) {
 // todo:
 // * join tawa, ola and olaide's code together
 // rearrange other codes
+// work on inline validation
