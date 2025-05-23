@@ -58,7 +58,15 @@ cardsData.forEach((card) => {
 // END OF CARD RENDERING  BY WISE
 
 // Kosi
+// Add event listener for the heart icon
+const heartIcons = document.querySelectorAll("svg");
 
+heartIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const isLiked = icon.getAttribute("fill") === "red";
+    icon.setAttribute("fill", isLiked ? "none" : "red");
+  });
+});
 // Oma
 
 // EDIT PROFILE MODAL --> TAWA
