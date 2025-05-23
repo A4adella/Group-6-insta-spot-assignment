@@ -336,6 +336,19 @@ section.section-grid img {
   object-fit: cover;
   display: block;
 }
+.val-thorens:focus,
+.restaurant-terrace:focus,
+.outdoor-cafe:focus,
+.long-bridge:focus,
+.tunnel:focus,
+.mountain-house:focus {
+  outline: 4px solid #552424; 
+  color:#e58c8c;
+  background-color: #722c2c;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .section-grid .text-icon {
   display: flex;
   justify-content: space-between;
