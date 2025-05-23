@@ -76,7 +76,61 @@ function attachHeartClickListeners() {
     });
   });
 }
+
 // Oma
+window.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".each-card");
+
+  if (cards.length > 0) {
+    cards.forEach((card) => {
+      // Add accessibility attributes
+      card.setAttribute("role", "button");
+      const title = card.querySelector("p")?.textContent?.trim() || "Card";
+      card.setAttribute("aria-label", `Card: ${title}`);
+
+      // Make card focusable
+      card.setAttribute("tabindex", "0");
+
+      // Apply focus styles
+      const applyFocusStyle = () => {
+        card.style.boxShadow = "0 0 0 3px #722c2c";
+        card.style.borderRadius = "8px";
+        // card.style.backgroundColor = " #722c2c";
+        card.style.outline = "4px solid #552424";
+        card.style.color = " #e58c8c";
+      };
+
+      const removeFocusStyle = () => {
+        card.style.boxShadow = "none";
+        card.style.backgroundColor = "transparent";
+        card.style.outline = "none";
+        card.style.color = " #212121";
+      };
+
+      // Event listeners
+      card.addEventListener("focus", applyFocusStyle);
+      card.addEventListener("blur", removeFocusStyle);
+      card.addEventListener("mouseenter", () => card.focus());
+      card.addEventListener("mouseleave", () => {
+        if (document.activeElement === card) card.blur();
+      });
+      card.addEventListener("click", () => card.focus());
+    });
+
+    // Auto-focus the first card
+    cards[0].focus();
+
+    // Blur on Tab
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        const active = document.activeElement;
+        if (active && active.classList.contains("each-card")) {
+          active.blur();
+        }
+      }
+    });
+  }
+});
 
 // EDIT PROFILE MODAL --> TAWA
 const openBtn = document.querySelector(".edit-profile-btn");
