@@ -62,11 +62,14 @@ cardsData.forEach((card) => {
 const heartIcons = document.querySelectorAll("svg");
 
 heartIcons.forEach((icon) => {
+  icon.setAttribute("fill", "none"); // set default fill to none
+
   icon.addEventListener("click", () => {
-    const isLiked = icon.getAttribute("fill") === "red";
-    icon.setAttribute("fill", isLiked ? "none" : "red");
+    const currentFill = icon.getAttribute("fill");
+    icon.setAttribute("fill", currentFill === "red" ? "none" : "red");
   });
 });
+
 // Oma
 
 // EDIT PROFILE MODAL --> TAWA
