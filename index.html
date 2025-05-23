@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,301 +38,6 @@
     <!-- CSS FILE -->
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    <header>
-      <!-- Innocent -->
-      <nav class="navbar">
-        <div class="logo">
-          <img src="./Logo/Logo.svg" alt="logo" />
-        </div>
-      </nav>
-    </header>
-
-    <main class="container">
-      <!-- WISE -- HERO SECTION -->
-      <section class="hero-section">
-        <div class="avatar-container">
-          <img
-            class="avatar"
-            src="./Images/bessie_image.png"
-            alt="avatar-image"
-          />
-
-          <div class="avatar-info">
-            <div class="avatar-text">
-              <h2>Bessie Coleman</h2>
-              <p>Civil Aviator</p>
-            </div>
-
-            <button class="edit-profile-btn">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 18 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="13.0676"
-                  y="4.5451"
-                  width="11.6506"
-                  height="3.21396"
-                  transform="rotate(135 13.0676 4.5451)"
-                  fill="#212121"
-                />
-                <path
-                  d="M14.2036 1.13628C14.8312 1.76384 14.8312 2.78132 14.2036 3.40889L13.6354 3.97704L11.3628 1.70443L11.931 1.13628C12.5586 0.508714 13.576 0.508714 14.2036 1.13628Z"
-                  fill="#212121"
-                />
-                <path
-                  d="M1.54021 13.1538L2.55674 10.5108L4.82935 12.7834L2.18637 13.8C1.782 13.9555 1.38468 13.5582 1.54021 13.1538Z"
-                  fill="#212121"
-                />
-              </svg>
-              Edit Profile
-            </button>
-          </div>
-        </div>
-
-        <!-- ****** MODAL OVERLAY******-->
-
-        <div id="modalOverlay" class="modal-overlay hidden">
-          <div class="modal-content">
-            <span id="closeModalBtn" class="close-btn">&times;</span>
-            <h2>Edit Profile</h2>
-            <form>
-              <label for="username">Name:</label>
-              <input type="text" id="username" name="username" required />
-
-              <label for="profession">Profession:</label>
-              <input type="text" id="profession" name="profession" required />
-
-              <label for="profileImage">Profile Image:</label>
-              <input
-                type="file"
-                id="profileImage"
-                name="profileImage"
-                accept="image/*"
-              />
-              <img id="imagePreview" src="" alt="Image Preview" />
-
-              <button type="submit" class="save-changes-btn">
-                Save Changes
-              </button>
-            </form>
-          </div>
-        </div>
-        <!-- ****** MODAL OVERLAY ENDS HERE ******-->
-
-        <button class="new-post-btn">
-          <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
-          <span>New Post</span>
-        </button>
-      </section>
-
-      <hr />
-
-      <!-- Osamudiameh -->
-      <section class="section-grid" id="card-container">
-        <!-- Wise: i didn't wanna delete the hardcoded html so i just commented it out below -->
-        <!-- <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/val-thorens.png" alt="val thorens" />
-          </div>
-
-          <div class="text-icon">
-            <p>Val Thorens</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="restaurant-terrace">
-          <div class="val-thorens__img">
-            <img
-              src="./Images/restaurant-terrace.png"
-              alt="front view of a restaurant"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>Restaurant-terrace</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="outdoor-cafe">
-          <div class="val-thorens__img">
-            <img
-              src="./Images/an-outdoor-cafe.png"
-              alt="people sitting at an outdoor cafe"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>An outdoor cafe</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="long-bridge">
-          <div class="val-thorens__img">
-            <img
-              src="./Images/long-bridge.png"
-              alt="long wooden bridge over a forest"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>A very long bridge over the forest...</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="tunnel">
-          <div class="val-thorens__img">
-            <img src="./Images/tunnel.png" alt="an outdoor tunnel" />
-          </div>
-
-          <div class="text-icon">
-            <p>Tunnel with morning light</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="mountain-house">
-          <div class="val-thorens__img">
-            <img src="./Images/mountain-house.png" alt="snowy mountain house" />
-          </div>
-
-          <div class="text-icon">
-            <p>Mountain house</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div> -->
-
-        <div id="imageModal" class="hidden modal-overlay">
-          <div class="modal-inner">
-            <span id="closeImageModal" class="close-btn">&times;</span>
-            <div style="padding: 1.5rem 1.5rem 0 1.5rem;">
-              <span style="font-weight: 500;"></span>
-            </div>
-            <img id="modalImage" src="" alt="Preview" class="modal-img">
-            <p id="modalCaption" class="modal-caption"></p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-    </main>
-
-    <!-- oma -->
-    <footer class="site-footer">2023 &copy; Spots</footer>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CIRCLE-6 SPOT APP</title>
-
-    <!-- FAVICON -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./favicon_io/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./favicon_io/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- AWESOME FONTS FOR NEW POST ICON -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-
-    <!-- CSS FILE -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-
   <body>
     <header>
       <!-- Innocent -->
@@ -391,15 +95,23 @@
           </div>
         </div>
 
-        <!-- ****** MODAL OVERLAY******-->
+        <!-- ****** MODAL OVERLAY****** -->
 
         <div id="modalOverlay" class="modal-overlay hidden">
           <div class="modal-content">
-            <span id="closeModalBtn" class="close-btn">&times;</span>
-            <h2>Edit Profile</h2>
+            <div class="modal-content__head">
+              <h2>Edit Profile</h2>
+              <span id="closeModalBtn" class="close-btn">&times;</span>
+            </div>
             <form>
               <label for="username">Name:</label>
-              <input type="text" id="userName" name="username" required />
+              <input
+                type="text"
+                id="userName"
+                name="username"
+                required
+                autofocus
+              />
 
               <label for="profession">Profession:</label>
               <input
@@ -427,189 +139,84 @@
             </form>
           </div>
         </div>
-        <!-- ****** MODAL OVERLAY ENDS HERE ******-->
 
-        <!--Ola: I added a class tag to this button-->
+        <!-- ****** MODAL OVERLAY ENDS HERE ******  -->
+        <!-- Ola: I added a class tag to this button -->
         <button id="newPostBtn" class="newPostBtn">
           <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
           <span>New Post</span>
         </button>
       </section>
 
-      <hr />
+      <hr class="hero-divider" />
 
       <!-- Add New Post Modal (by Ola) -->
       <div id="newPostModal" class="newPostModal">
         <div class="newPostModal-content">
-          <span id="newPostcloseBtn" class="newPostcloseBtn">&times;</span>
-          <h2>New post</h2>
+          <div class="overlayHeader">
+            <h3>New post</h3>
+            <button id="newPostcloseBtn" class="newPostcloseBtn">
+              <span><img src="./Icons/Icon_close.svg" alt="add" /></span>
+            </button>
+
+             <!--<span id="newPostcloseBtn" class="newPostcloseBtn">&times;</span>
+               -->
+            </div>
 
           <!-- Post Title -->
           <div class="form-group">
             <label for="postTitle">Post title</label>
-            <input type="text" id="postTitle" placeholder="Input title" />
+            <input
+              type="text"
+              id="postTitle"
+              placeholder="Input title"
+              required
+              autofocus
+            />
           </div>
 
-          <!-- <label for="imageUpload">Upload Image</label> -->
-          <div class="upload-area">
-            <input type="file" id="imageUpload" />
+            <!-- <label for="imageUpload">Upload Image</label> -->
+            <div class="form-group">
+              <label for="uploadImage">Upload Image</label> 
+              <!-- <div class="upload-area"> -->
+                <input type="file" id="imageUpload"/>
+              <!-- </div> -->
+            </div>
+            
           </div>
 
-          <button class="upload-btn">Upload post</button>
+          <div class="overlayButton">
+            <button class="upload-btn">Upload post</button>
+          </div>
+        
+          
         </div>
       </div>
 
+      <hr class="hero-divider" />
+
       <!-- Osamudiameh -->
       <section class="section-grid" id="card-container">
-        <!-- Wise: i didn't wanna delete the hardcoded html so i just commented it out below -->
-        <!-- <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/val-thorens.png" alt="val thorens" />
-          </div>
-
-          <div class="text-icon">
-            <p>Val Thorens</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img
-              src="./Images/restaurant-terrace.png"
-              alt="front view of a restaurant"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>Restaurant-terrace</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img
-              src="./Images/an-outdoor-cafe.png"
-              alt="people sitting at an outdoor cafe"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>An outdoor cafe</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img
-              src="./Images/long-bridge.png"
-              alt="long wooden bridge over a forest"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>A very long bridge over the forest...</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/tunnel.png" alt="an outdoor tunnel" />
-          </div>
-
-          <div class="text-icon">
-            <p>Tunnel with morning light</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/mountain-house.png" alt="snowy mountain house" />
-          </div>
-
-          <div class="text-icon">
-            <p>Mountain house</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div> -->
-
         <div id="imageModal" class="hidden modal-overlay">
-          <span id="closeImageModal" class="close-btn">&times;</span>
-          <img id="modalImage" src="" alt="Preview" class="modal-img" />
+          <div class="modal-inner">
+            <span id="closeImageModal" class="close-btn close-btn__grid"
+              >&times;</span
+            >
+            <div style="padding: 1.5rem 1.5rem 0 1.5rem">
+              <span style="font-weight: 500"></span>
+            </div>
+            <img id="modalImage" src="" alt="Preview" class="modal-img" />
+            <p id="modalCaption" class="modal-caption"></p>
+          </div>
         </div>
       </section>
 
       <hr />
     </main>
 
-    <!-- oma -->
+    <!-- oma's code -->
     <footer class="site-footer">2023 &copy; Spots</footer>
 
     <script src="./script.js"></script>
   </body>
 </html>
-

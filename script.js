@@ -34,107 +34,46 @@ const cardsData = [
 
 const cardContainer = document.getElementById("card-container");
 
-cardsData.forEach((card) => {
-  cardContainer.innerHTML += `
-  <div class="each-card">
-    <div class="cardImg-div">
-        <img src="${card.image}" alt="${card.title}" class="card-img" />
+function createCard(title, imageUrl) {
+  return `
+    <div class="each-card">
+      <div class="cardImg-div">
+        <img src="${imageUrl}" alt="${title}" class="card-img" />
+      </div>
+      <div class="text-icon">
+        <p>${title}</p>
+        <svg
+          class="heart-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="30"
+          viewBox="0 0 256 256">
+          <path
+            d="M128,224s-96-55.16-96-120A56,56,0,0,1,128,56a56,56,0,0,1,96,48C224,168.84,128,224,128,224Z"
+          />
+        </svg>
+      </div> 
     </div>
-    <div class="text-icon">
-      <p>${card.title}</p>
-      <svg
-            class="heart-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="30"
-            viewBox="0 0 256 256" >
-            <path
-          d="M128,224s-96-55.16-96-120A56,56,0,0,1,128,56a56,56,0,0,1,96,48C224,168.84,128,224,128,224Z"
-        />
-      </svg>
-    </div> 
-  </div>`;
-});
+  `;
+}
+
+cardsData.forEach(
+  (card) => (cardContainer.innerHTML += createCard(card.title, card.image))
+);
+
 // END OF CARD RENDERING  BY WISE
 
-// Kosi
-document.addEventListener("DOMContentLoaded", () => {
-  const heartIcons = document.querySelectorAll(".heart-icon");
+cardContainer.addEventListener("click", (e) => {
+  if (e.target.closest(".heart-icon")) {
+    const icon = e.target.closest(".heart-icon");
+    icon.classList.toggle("liked");
 
-  heartIcons.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      icon.classList.toggle("liked");
-    });
-  });
-});
-
-// Wait a moment for DOM to be ready (if this runs before cards are rendered)
-setTimeout(() => {
-  const heartIcons = document.querySelectorAll(".heart-icon");
-
-  heartIcons.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      const currentColor = icon.getAttribute("fill");
-      icon.setAttribute("fill", currentColor === "red" ? "gray" : "red");
-    });
-  });
-}, 0);
-
-// Oma
-window.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".each-card");
-
-  if (cards.length > 0) {
-    cards.forEach(card => {
-      // Add accessibility attributes
-      card.setAttribute("role", "button");
-      const title = card.querySelector("p")?.textContent?.trim() || "Card";
-      card.setAttribute("aria-label", `Card: ${title}`);
-
-      // Make card focusable
-      card.setAttribute("tabindex", "0");
-
-      // Apply focus styles
-      const applyFocusStyle = () => {
-        card.style.boxShadow = "0 0 0 3px #722c2c";
-        card.style.borderRadius = "8px";
-        card.style.backgroundColor = " #722c2c"; 
-        card.style.outline = "4px solid #552424";
-        card.style.color = " #e58c8c";
-
-      };
-
-      const removeFocusStyle = () => {
-        card.style.boxShadow = "none";
-        card.style.backgroundColor = "transparent";
-        card.style.outline = "none";
-        card.style.color = " #212121";
-      };
-
-      // Event listeners
-      card.addEventListener("focus", applyFocusStyle);
-      card.addEventListener("blur", removeFocusStyle);
-      card.addEventListener("mouseenter", () => card.focus());
-      card.addEventListener("mouseleave", () => {
-        if (document.activeElement === card) card.blur();
-      });
-      card.addEventListener("click", () => card.focus());
-    });
-
-    // Auto-focus the first card
-    cards[0].focus();
-
-    // Blur on Tab
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Tab") {
-        const active = document.activeElement;
-        if (active && active.classList.contains("each-card")) {
-          active.blur();
-        }
-      }
-    });
+    const currentColor = icon.getAttribute("fill") || "gray";
+    icon.setAttribute("fill", currentColor === "red" ? "gray" : "red");
   }
 });
+
+// Oma
 
 // EDIT PROFILE MODAL --> TAWA
 const openBtn = document.querySelector(".edit-profile-btn");
@@ -176,6 +115,49 @@ imageInput.addEventListener("change", function () {
   }
 });
 // END OF EDIT PROFILE MODAL BY TAWA
+
+//OMA
+//Focus for the edit profile modal
+openBtn.addEventListener("click", () => {
+  setTimeout(() => {
+    const inputs = modalOverlay.querySelectorAll("input");
+    const firstInput = inputs[0];
+    if (!firstInput) return;
+
+    // Utility to apply/remove outline
+    const addOutline = (el) => {
+      el.style.outline = "2px solid #722c2c";
+      el.style.outlineOffset = "2px";
+    };
+    const removeOutline = (el) => {
+      el.style.outline = "none";
+    };
+
+    inputs.forEach((input) => {
+      // Focus and blur
+      input.addEventListener("focus", () => addOutline(input));
+      input.addEventListener("blur", () => removeOutline(input));
+
+      // Hover effects and auto-blur first input
+      input.addEventListener("mouseenter", () => {
+        addOutline(input);
+        if (firstInput !== input && document.activeElement === firstInput) {
+          firstInput.blur(); // remove focus from first input if hovering another
+        }
+      });
+
+      input.addEventListener("mouseleave", () => {
+        if (document.activeElement !== input) {
+          removeOutline(input);
+        }
+      });
+    });
+
+    // Focus the first input on open
+    addOutline(firstInput);
+    firstInput.focus();
+  }, 0);
+});
 
 // Osamudiameh Image Preview Overlay
 const imageModal = document.getElementById("imageModal");
@@ -221,10 +203,51 @@ newPostcloseBtn.addEventListener("click", () => {
 
 // Close when clicking outside modal content
 window.addEventListener("click", (e) => {
-  if (e.target == modal) {
+  if (e.target === newPostModal) {
     newPostModal.style.display = "none";
   }
 });
+
+// OMA
+//Focus for the new post modal
+// newPostBtn.addEventListener("click", () => {
+//   newPostModal.style.display = "block";
+
+//   // Delay focus and setup to ensure modal is visible
+//   setTimeout(() => {
+//     const inputs = newPostModal.querySelectorAll("input");
+//     const firstInput = inputs[0];
+//     if (!firstInput) return;
+
+//     // Outline utility
+//     const addOutline = (el) => {
+//       el.style.outline = "2px solid darkgreen";
+//       el.style.outlineOffset = "2px";
+//     };
+//     const removeOutline = (el) => {
+//       el.style.outline = "none";
+//     };
+
+//     // Add focus, blur, mouseenter, and mouseleave to all inputs
+//     inputs.forEach((input) => {
+//       input.addEventListener("focus", () => addOutline(input));
+//       input.addEventListener("blur", () => removeOutline(input));
+//       input.addEventListener("mouseenter", () => {
+//         addOutline(input);
+//         if (firstInput !== input && document.activeElement === firstInput) {
+//           firstInput.blur(); // blur first input if hovering another
+//         }
+//       });
+//       input.addEventListener("mouseleave", () => {
+//         if (document.activeElement !== input) removeOutline(input);
+//       });
+//     });
+
+//     // Focus and highlight the first input
+//     addOutline(firstInput);
+//     firstInput.focus();
+//   }, 0);
+// });
 
 // Adella
 
@@ -310,3 +333,37 @@ function saveChanges() {
 // Kareema
 
 // Olaide
+// Card Redering Dynamically
+const imageUpload = document.getElementById("imageUpload");
+const postTitle = document.getElementById("postTitle");
+const uploadBtn = document.querySelector(".upload-btn");
+
+uploadBtn.addEventListener("click", () => {
+  const title = postTitle.value;
+  const file = imageUpload.files[0];
+
+  if (!title || !file) {
+    alert("Please enter a title and select an image.");
+    return;
+  }
+
+  const imgUrl = URL.createObjectURL(file);
+  const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
+
+  cardContainer.insertAdjacentHTML("beforeend", newCard);
+
+  // Reset
+  postTitle.value = "";
+  imageUpload.value = "";
+  newPostModal.style.display = "none";
+});
+
+// start with capital letter
+function capitalizedFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// todo:
+// * join tawa, ola and olaide's code together
+// rearrange other codes
+// work on inline validation
