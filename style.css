@@ -389,7 +389,7 @@ section.section-grid img {
 .modal-img {
   margin-top: 1.2rem;
   border-radius: 12px;
-  max-width: 80vw;
+  max-width: 90vw;
   max-height: 60vh;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
