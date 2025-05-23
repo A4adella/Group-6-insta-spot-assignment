@@ -182,11 +182,9 @@ hr {
   border: none;
 }
 
-
 /**************************************/
 /* Edit Profile Moal Overlay Starts here */
 /**************************************/
-
 
 /* Hide modal by default */
 
@@ -237,18 +235,18 @@ hr {
   font-size: 16px;
 }
 
-.modal-content input{
+.modal-content input {
   border: 2px solid #dcc48f;
   border-radius: 7px;
 }
 
-.modal-content input:focus{
-    outline: none;
-    border-color: #dcc48f;
-    box-shadow: 0 0 3px #dcc48f;
+.modal-content input:focus {
+  outline: none;
+  border-color: #dcc48f;
+  box-shadow: 0 0 3px #dcc48f;
 }
 
-.save-changes-btn{
+.save-changes-btn {
   width: 149px;
   height: 52px;
   color: #fcf5e5;
@@ -262,19 +260,18 @@ hr {
 
 .save-changes-btn:hover {
   opacity: 80%;
-   transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-#imagePreview{
-  max-width: 100px; 
+#imagePreview {
+  max-width: 100px;
   display: none;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 /**************************************/
 /* Edit Profile Moal Overlay Ends here */
 /**************************************/
-
 
 /**************************************/
 /* Section - grid */
@@ -319,7 +316,7 @@ section.section-grid img {
   opacity: 1;
 }
 /* Image Preview Overlay Styles */
-.modal-overlay{
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -331,12 +328,12 @@ section.section-grid img {
   justify-content: center;
   z-index: 1000;
 }
-.modal-img{
+.modal-img {
   max-width: 90vw;
   max-height: 80vh;
   border-radius: 8px;
 }
-.close-btn{
+.close-btn {
   position: absolute;
   top: 20px;
   right: 30px;
@@ -344,7 +341,7 @@ section.section-grid img {
   color: #fff;
   cursor: pointer;
 }
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -361,7 +358,6 @@ section.section-grid img {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
 
 /**************************************/
 /* New Post Modal */
@@ -383,16 +379,16 @@ section.section-grid img {
 .form-group input,
 .form-group select {
   padding: 12px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 8px;
   font-size: 0.8rem;
-  border-color: #F0F0F0;
+  border-color: #f0f0f0;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #2EC4B6;
+  border-color: #2ec4b6;
 }
 
 .form-group input::placeholder,
@@ -411,7 +407,6 @@ section.section-grid img {
   opacity: 1;
 }
 
-
 /* Modal base styles */
 .newPostModal {
   display: none; /* Hidden by default */
@@ -425,7 +420,7 @@ section.section-grid img {
 }
 
 /* Modal box */
-.newPostModal-content{
+.newPostModal-content {
   background-color: #fef9ef;
   margin: 10% auto;
   padding: 20px;
@@ -486,7 +481,6 @@ section.section-grid img {
 /**************************************/
 /* New Post Modal Ends Here */
 /**************************************/
-
 
 /**************************************/
 /* Footer */
