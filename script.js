@@ -59,16 +59,20 @@ cardsData.forEach((card) => {
 
 // Kosi
 // Add event listener for the heart icon
-const heartIcons = document.querySelectorAll("svg");
+// Wait for DOM to update after cards are inserted
+setTimeout(() => {
+  const heartIcons = document.querySelectorAll(".text-icon svg");
 
-heartIcons.forEach((icon) => {
-  icon.setAttribute("fill", "none"); // set default fill to none
+  heartIcons.forEach((icon) => {
+    icon.setAttribute("fill", "none"); // Ensure initial state
 
-  icon.addEventListener("click", () => {
-    const currentFill = icon.getAttribute("fill");
-    icon.setAttribute("fill", currentFill === "red" ? "none" : "red");
+    icon.addEventListener("click", () => {
+      const currentFill = icon.getAttribute("fill");
+      icon.setAttribute("fill", currentFill === "red" ? "none" : "red");
+    });
   });
-});
+}, 0);
+
 
 // Oma
 
