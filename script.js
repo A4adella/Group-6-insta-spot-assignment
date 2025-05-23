@@ -43,6 +43,8 @@ cardsData.forEach((card) => {
     <div class="text-icon">
       <p>${card.title}</p>
       <svg
+            class="heart-icon"
+            data-index="${index}"
             xmlns="http://www.w3.org/2000/svg"
             width="25"
             height="30"
@@ -58,17 +60,22 @@ cardsData.forEach((card) => {
 // END OF CARD RENDERING  BY WISE
 
 // Kosi
-// Select all SVG paths inside the hearts
-const heartPaths = document.querySelectorAll(".text-icon svg path");
+const heartIcons = document.querySelectorAll(".heart-icon");
 
-heartPaths.forEach((path) => {
-  path.setAttribute("fill", "none"); // set initial unliked color
+heartIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const index = icon.getAttribute("data-index");
+    cardsData[index].liked = !cardsData[index].liked;
 
-  path.addEventListener("click", () => {
-    const isLiked = path.getAttribute("fill") === "red";
-    path.setAttribute("fill", isLiked ? "none" : "red");
+    // Toggle fill color
+    if (cardsData[index].liked) {
+      icon.setAttribute("fill", "red");
+    } else {
+      icon.setAttribute("fill", "none");
+    }
   });
 });
+
 
 // Oma
 
