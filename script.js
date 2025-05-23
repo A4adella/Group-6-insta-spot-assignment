@@ -118,15 +118,17 @@ imageInput.addEventListener("change", function () {
 });
 // END OF EDIT PROFILE MODAL BY TAWA
 
-// Osamudiaameh Image Preview Overlay
+// Osamudiameh Image Preview Overlay
 const imageModal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
 const closeImageModal = document.getElementById("closeImageModal");
+const modalCaption = document.getElementById("modalCaption");
 
 cardContainer.addEventListener("click", function (e) {
   if (e.target.classList.contains("card-img")) {
     modalImage.src = e.target.src;
     modalImage.alt = e.target.alt;
+    modalCaption.textContent = e.target.alt;
     imageModal.classList.remove("hidden");
   }
 });
