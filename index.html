@@ -38,7 +38,6 @@
     <!-- CSS FILE -->
     <link rel="stylesheet" href="./style.css" />
   </head>
-
   <body>
     <header>
       <!-- Innocent -->
@@ -56,7 +55,7 @@
           <img
             id="profileImage"
             class="avatar"
-            src="Images/Avatar.png"
+            src="./Images/Avatar.png"
             alt="avatar-image"
           />
 
@@ -96,15 +95,23 @@
           </div>
         </div>
 
-        <!-- ****** MODAL OVERLAY******-->
+        <!-- ****** MODAL OVERLAY****** -->
 
         <div id="modalOverlay" class="modal-overlay hidden">
           <div class="modal-content">
-            <span id="closeModalBtn" class="close-btn">&times;</span>
-            <h2>Edit Profile</h2>
+            <div class="modal-content__head">
+              <h2>Edit Profile</h2>
+              <span id="closeModalBtn" class="close-btn">&times;</span>
+            </div>
             <form>
               <label for="username">Name:</label>
-              <input type="text" id="userName" name="username" required />
+              <input
+                type="text"
+                id="userName"
+                name="username"
+                required
+                autofocus
+              />
 
               <label for="profession">Profession:</label>
               <input
@@ -132,16 +139,16 @@
             </form>
           </div>
         </div>
-        <!-- ****** MODAL OVERLAY ENDS HERE ******-->
 
-        <!--Ola: I added a class tag to this button-->
+        <!-- ****** MODAL OVERLAY ENDS HERE ******  -->
+        <!-- Ola: I added a class tag to this button -->
         <button id="newPostBtn" class="newPostBtn">
           <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
           <span>New Post</span>
         </button>
       </section>
 
-      <hr />
+      <hr class="hero-divider" />
 
       <!-- Add New Post Modal (by Ola) -->
       <div id="newPostModal" class="newPostModal">
@@ -156,12 +163,17 @@
                -->
             </div>
 
-          <div class="overlayBody">
-            <!-- Post Title -->
-            <div class="form-group">
-              <label for="postTitle"> Post title </label> 
-              <input type="text" id="postTitle" placeholder="Input title">
-            </div>
+          <!-- Post Title -->
+          <div class="form-group">
+            <label for="postTitle">Post title</label>
+            <input
+              type="text"
+              id="postTitle"
+              placeholder="Input title"
+              required
+              autofocus
+            />
+          </div>
 
             <!-- <label for="imageUpload">Upload Image</label> -->
             <div class="form-group">
@@ -181,154 +193,28 @@
         </div>
       </div>
 
+      <hr class="hero-divider" />
+
       <!-- Osamudiameh -->
       <section class="section-grid" id="card-container">
-        <!-- Wise: i didn't wanna delete the hardcoded html so i just commented it out below -->
-        <!-- <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/val-thorens.png" alt="val thorens" />
-          </div>
-
-          <div class="text-icon">
-            <p>Val Thorens</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img
-              src="./Images/restaurant-terrace.png"
-              alt="front view of a restaurant"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>Restaurant-terrace</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img
-              src="./Images/an-outdoor-cafe.png"
-              alt="people sitting at an outdoor cafe"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>An outdoor cafe</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img
-              src="./Images/long-bridge.png"
-              alt="long wooden bridge over a forest"
-            />
-          </div>
-
-          <div class="text-icon">
-            <p>A very long bridge over the forest...</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/tunnel.png" alt="an outdoor tunnel" />
-          </div>
-
-          <div class="text-icon">
-            <p>Tunnel with morning light</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="each-card">
-          <div class="cardImg-div">
-            <img src="./Images/mountain-house.png" alt="snowy mountain house" />
-          </div>
-
-          <div class="text-icon">
-            <p>Mountain house</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="30"
-              fill=""
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"
-              ></path>
-            </svg>
-          </div>
-        </div> -->
-
         <div id="imageModal" class="hidden modal-overlay">
-          <span id="closeImageModal" class="close-btn">&times;</span>
-          <img id="modalImage" src="" alt="Preview" class="modal-img">
+          <div class="modal-inner">
+            <span id="closeImageModal" class="close-btn close-btn__grid"
+              >&times;</span
+            >
+            <div style="padding: 1.5rem 1.5rem 0 1.5rem">
+              <span style="font-weight: 500"></span>
+            </div>
+            <img id="modalImage" src="" alt="Preview" class="modal-img" />
+            <p id="modalCaption" class="modal-caption"></p>
+          </div>
         </div>
       </section>
 
       <hr />
     </main>
 
-    <!-- oma -->
+    <!-- oma's code -->
     <footer class="site-footer">2023 &copy; Spots</footer>
 
     <script src="./script.js"></script>

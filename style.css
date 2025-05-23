@@ -175,18 +175,16 @@ header {
   }
 }
 
-hr {
-  height: 1.5px;
-  background-color: #212121;
-  opacity: 40%;
+.hero-divider {
+  /* height: 1.5px; */
+  height: 1px;
+  background-color: rgba(33, 33, 33, 0.4);
   border: none;
 }
-
 
 /**************************************/
 /* Edit Profile Moal Overlay Starts here */
 /**************************************/
-
 
 /* Hide modal by default */
 
@@ -228,18 +226,18 @@ hr {
   font-size: 16px;
 }
 
-.modal-content input{
+.modal-content input {
   border: 2px solid #dcc48f;
   border-radius: 7px;
+  outline: none;
 }
 
-.modal-content input:focus{
-    outline: none;
-    border-color: #dcc48f;
-    box-shadow: 0 0 3px #dcc48f;
+.modal-content input:focus {
+  /* border-color: #dcc48f; */
+  box-shadow: inset 0 0 0 3px #dcc48f;
 }
 
-.save-changes-btn{
+.save-changes-btn {
   width: 149px;
   height: 52px;
   color: #fcf5e5;
@@ -253,19 +251,18 @@ hr {
 
 .save-changes-btn:hover {
   opacity: 80%;
-   transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-#imagePreview{
-  max-width: 100px; 
+#imagePreview {
+  max-width: 100px;
   display: none;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 /**************************************/
 /* Edit Profile Moal Overlay Ends here */
 /**************************************/
-
 
 /**************************************/
 /* Section - grid */
@@ -276,6 +273,7 @@ section.section-grid {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6em;
   margin: 20px 0 40px;
+  user-select: none;
 }
 section.section-grid img {
   border-radius: 8px;
@@ -286,61 +284,153 @@ section.section-grid img {
   transform: scale(1.04);
   cursor: pointer;
 }
+.each-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* justify-content: space-between; */
+  /* height: 320px;  */
+  /* border: 1px solid #ddd; */
+  /* border-radius: 8px; */
+  /* overflow: hidden; */
+  /* background: #fff; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* .cardImg-div {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cardImg-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.text-icon {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
 .cardImg-div {
   width: 100%;
+  height: 409px;
+  overflow: hidden;
 }
 .cardImg-div img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
+
 .section-grid .text-icon {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  margin-top: 12px;
+  /* margin-top: 12px; */
 }
-.text-icon svg {
+/* .text-icon svg {
   transition: transform 0.4s ease-in-out;
   cursor: pointer;
   fill: #212121;
   opacity: 0.4;
+} */
+.heart-icon {
+  fill: #212121;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.2s ease;
 }
 .text-icon svg:hover {
   transform: scale(1.07);
   opacity: 1;
 }
+.heart-icon.liked {
+  fill: red;
+}
 /* Image Preview Overlay Styles */
-.modal-overlay{
+.modal-inner {
+  position: relative;
+  padding-bottom: 1.5rem;
+  min-width: 350px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-caption {
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+/* .modal-overlay{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+} */
+.modal-img {
+  margin-top: 1.2rem;
+  border-radius: 12px;
+  max-width: 80vw;
+  max-height: 60vh;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
-.modal-img{
-  max-width: 90vw;
-  max-height: 80vh;
-  border-radius: 8px;
+.modal-content__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
-.close-btn{
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: #fff;
+.close-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 1.8rem;
+  z-index: 2;
   cursor: pointer;
 }
-.hidden{
+.close-btn__grid {
+  position: absolute;
+  top: 12px;
+  right: -57px;
+  color: #ef233c;
+}
+.hidden {
   display: none;
+}
+/* Media queries for the close button */
+@media (max-width: 550px) {
+  .close-btn {
+    top: -16px;
+    right: -10px;
+  }
 }
 
 /* tawa */
 /* MEDIA QUERIES For GRID SECTION */
+@media (max-width: 1100px) {
+  section.section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 1000px) {
   .section-grid .text-icon {
     font-size: 16px;
@@ -352,8 +442,6 @@ section.section-grid img {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
-
 
 
 /**************************************/
@@ -407,14 +495,14 @@ h3 {
 
 .form-group input {
   padding: 12px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 0.8rem;
   border-color: #F0F0F0;
 }
 
-.form-group input:focus, 
-.form-group input:hover {
+.form-group input:focus,
+.form-group select:focus {
   outline: none;
   border-color: #2EC4B6;
 }
@@ -443,7 +531,7 @@ h3 {
 
 /* Modal base styles */
 .newPostModal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 10;
   left: 0;
@@ -451,12 +539,10 @@ h3 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
-  backdrop-filter: blur(8px);
 }
 
 /* Modal box */
 .newPostModal-content{
-  overflow: hidden;
   background-color: #fef9ef;
   margin: 10% auto;
   width: 500px;
@@ -576,7 +662,6 @@ h3 {
 /**************************************/
 /* New Post Modal Ends Here by Ola */
 /**************************************/
-
 
 /**************************************/
 /* Footer */
