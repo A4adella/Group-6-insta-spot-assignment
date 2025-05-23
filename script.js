@@ -58,21 +58,17 @@ cardsData.forEach((card) => {
 // END OF CARD RENDERING  BY WISE
 
 // Kosi
-// Add event listener for the heart icon
-// Wait for DOM to update after cards are inserted
-setTimeout(() => {
-  const heartIcons = document.querySelectorAll(".text-icon svg");
+// Select all SVG paths inside the hearts
+const heartPaths = document.querySelectorAll(".text-icon svg path");
 
-  heartIcons.forEach((icon) => {
-    icon.setAttribute("fill", "none"); // Ensure initial state
+heartPaths.forEach((path) => {
+  path.setAttribute("fill", "none"); // set initial unliked color
 
-    icon.addEventListener("click", () => {
-      const currentFill = icon.getAttribute("fill");
-      icon.setAttribute("fill", currentFill === "red" ? "none" : "red");
-    });
+  path.addEventListener("click", () => {
+    const isLiked = path.getAttribute("fill") === "red";
+    path.setAttribute("fill", isLiked ? "none" : "red");
   });
-}, 0);
-
+});
 
 // Oma
 
