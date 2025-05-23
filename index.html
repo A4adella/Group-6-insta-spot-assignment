@@ -153,8 +153,15 @@
       <!-- Add New Post Modal (by Ola) -->
       <div id="newPostModal" class="newPostModal">
         <div class="newPostModal-content">
-          <span id="newPostcloseBtn" class="newPostcloseBtn">&times;</span>
-          <h2>New post</h2>
+          <div class="overlayHeader">
+            <h3>New post</h3>
+            <button id="newPostcloseBtn" class="newPostcloseBtn">
+              <span><img src="./Icons/Icon_close.svg" alt="add" /></span>
+            </button>
+
+             <!--<span id="newPostcloseBtn" class="newPostcloseBtn">&times;</span>
+               -->
+            </div>
 
           <!-- Post Title -->
           <div class="form-group">
@@ -168,12 +175,21 @@
             />
           </div>
 
-          <label for="imageUpload">Upload Image</label>
-          <div class="upload-area">
-            <input type="file" id="imageUpload" />
+            <!-- <label for="imageUpload">Upload Image</label> -->
+            <div class="form-group">
+              <label for="uploadImage">Upload Image</label> 
+              <!-- <div class="upload-area"> -->
+                <input type="file" id="imageUpload"/>
+              <!-- </div> -->
+            </div>
+            
           </div>
 
-          <button class="upload-btn">Upload post</button>
+          <div class="overlayButton">
+            <button class="upload-btn">Upload post</button>
+          </div>
+        
+          
         </div>
       </div>
 
