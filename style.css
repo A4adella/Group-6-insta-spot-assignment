@@ -26,6 +26,7 @@ body {
 
 .heart-icon.liked {
   fill: red;
+  background-color: red;
 }
 
 
