@@ -78,59 +78,7 @@ function attachHeartClickListeners() {
 }
 
 // Oma
-window.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".each-card");
 
-  if (cards.length > 0) {
-    cards.forEach((card) => {
-      // Add accessibility attributes
-      card.setAttribute("role", "button");
-      const title = card.querySelector("p")?.textContent?.trim() || "Card";
-      card.setAttribute("aria-label", `Card: ${title}`);
-
-      // Make card focusable
-      card.setAttribute("tabindex", "0");
-
-      // Apply focus styles
-      const applyFocusStyle = () => {
-        card.style.boxShadow = "0 0 0 3px #722c2c";
-        card.style.borderRadius = "8px";
-        // card.style.backgroundColor = " #722c2c";
-        card.style.outline = "4px solid #552424";
-        card.style.color = " #e58c8c";
-      };
-
-      const removeFocusStyle = () => {
-        card.style.boxShadow = "none";
-        card.style.backgroundColor = "transparent";
-        card.style.outline = "none";
-        card.style.color = " #212121";
-      };
-
-      // Event listeners
-      card.addEventListener("focus", applyFocusStyle);
-      card.addEventListener("blur", removeFocusStyle);
-      card.addEventListener("mouseenter", () => card.focus());
-      card.addEventListener("mouseleave", () => {
-        if (document.activeElement === card) card.blur();
-      });
-      card.addEventListener("click", () => card.focus());
-    });
-
-    // Auto-focus the first card
-    cards[0].focus();
-
-    // Blur on Tab
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Tab") {
-        const active = document.activeElement;
-        if (active && active.classList.contains("each-card")) {
-          active.blur();
-        }
-      }
-    });
-  }
-});
 
 // EDIT PROFILE MODAL --> TAWA
 const openBtn = document.querySelector(".edit-profile-btn");
@@ -168,6 +116,50 @@ imageInput.addEventListener("change", function () {
   }
 });
 // END OF EDIT PROFILE MODAL BY TAWA
+
+//OMA
+//Focus for the edit profile modal
+openBtn.addEventListener("click", () => {
+  setTimeout(() => {
+    const inputs = modalOverlay.querySelectorAll("input");
+    const firstInput = inputs[0];
+    if (!firstInput) return;
+
+    // Utility to apply/remove outline
+    const addOutline = (el) => {
+      el.style.outline = "2px solid #722c2c";
+      el.style.outlineOffset = "2px";
+    };
+    const removeOutline = (el) => {
+      el.style.outline = "none";
+    };
+
+    inputs.forEach((input) => {
+      // Focus and blur
+      input.addEventListener("focus", () => addOutline(input));
+      input.addEventListener("blur", () => removeOutline(input));
+
+      // Hover effects and auto-blur first input
+      input.addEventListener("mouseenter", () => {
+        addOutline(input);
+        if (firstInput !== input && document.activeElement === firstInput) {
+          firstInput.blur(); // remove focus from first input if hovering another
+        }
+      });
+
+      input.addEventListener("mouseleave", () => {
+        if (document.activeElement !== input) {
+          removeOutline(input);
+        }
+      });
+    });
+
+    // Focus the first input on open
+    addOutline(firstInput);
+    firstInput.focus();
+  }, 0);
+});
+
 
 // Osamudiameh Image Preview Overlay
 const imageModal = document.getElementById("imageModal");
@@ -216,6 +208,47 @@ window.addEventListener("click", (e) => {
   if (e.target === newPostModal) {
     newPostModal.style.display = "none";
   }
+});
+
+// OMA
+//Focus for the new post modal
+newPostBtn.addEventListener("click", () => {
+  newPostModal.style.display = "block";
+
+  // Delay focus and setup to ensure modal is visible
+  setTimeout(() => {
+    const inputs = newPostModal.querySelectorAll("input");
+    const firstInput = inputs[0];
+    if (!firstInput) return;
+
+    // Outline utility
+    const addOutline = (el) => {
+      el.style.outline = "2px solid darkgreen";
+      el.style.outlineOffset = "2px";
+    };
+    const removeOutline = (el) => {
+      el.style.outline = "none";
+    };
+
+    // Add focus, blur, mouseenter, and mouseleave to all inputs
+    inputs.forEach((input) => {
+      input.addEventListener("focus", () => addOutline(input));
+      input.addEventListener("blur", () => removeOutline(input));
+      input.addEventListener("mouseenter", () => {
+        addOutline(input);
+        if (firstInput !== input && document.activeElement === firstInput) {
+          firstInput.blur(); // blur first input if hovering another
+        }
+      });
+      input.addEventListener("mouseleave", () => {
+        if (document.activeElement !== input) removeOutline(input);
+      });
+    });
+
+    // Focus and highlight the first input
+    addOutline(firstInput);
+    firstInput.focus();
+  }, 0);
 });
 
 // Adella
