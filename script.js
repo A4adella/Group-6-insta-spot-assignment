@@ -34,27 +34,32 @@ const cardsData = [
 
 const cardContainer = document.getElementById("card-container");
 
-cardsData.forEach((card) => {
-  cardContainer.innerHTML += `
-  <div class="each-card">
-    <div class="cardImg-div">
-        <img src="${card.image}" alt="${card.title}" class="card-img" />
+function createCard(title, imageUrl) {
+  return `
+    <div class="each-card">
+      <div class="cardImg-div">
+        <img src="${imageUrl}" alt="${title}" class="card-img" />
+      </div>
+      <div class="text-icon">
+        <p>${title}</p>
+        <svg
+          class="heart-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="30"
+          viewBox="0 0 256 256">
+          <path
+            d="M128,224s-96-55.16-96-120A56,56,0,0,1,128,56a56,56,0,0,1,96,48C224,168.84,128,224,128,224Z"
+          />
+        </svg>
+      </div> 
     </div>
-    <div class="text-icon">
-      <p>${card.title}</p>
-      <svg
-            class="heart-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="30"
-            viewBox="0 0 256 256" >
-            <path
-          d="M128,224s-96-55.16-96-120A56,56,0,0,1,128,56a56,56,0,0,1,96,48C224,168.84,128,224,128,224Z"
-        />
-      </svg>
-    </div> 
-  </div>`;
-});
+  `;
+}
+
+cardsData.forEach(
+  (card) => (cardContainer.innerHTML += createCard(card.title, card.image))
+);
 // END OF CARD RENDERING  BY WISE
 
 // Kosi
@@ -231,3 +236,36 @@ function saveChanges() {
 // Kareema
 
 // Olaide
+// Card Redering Dynamically
+const imageUpload = document.getElementById("imageUpload");
+const postTitle = document.getElementById("postTitle");
+const uploadBtn = document.querySelector(".upload-btn");
+
+uploadBtn.addEventListener("click", () => {
+  const title = postTitle.value;
+  const file = imageUpload.files[0];
+
+  if (!title || !file) {
+    alert("Please enter a title and select an image.");
+    return;
+  }
+
+  const imgUrl = URL.createObjectURL(file);
+  const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
+
+  cardContainer.insertAdjacentHTML("beforeend", newCard);
+
+  // Reset
+  postTitle.value = "";
+  imageUpload.value = "";
+  newPostModal.style.display = "none";
+});
+
+// start with capital letter
+function capitalizedFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// todo:
+// * join tawa, ola and olaide's code together
+// rearrange other codes
