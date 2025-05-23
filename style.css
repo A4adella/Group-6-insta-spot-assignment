@@ -216,15 +216,6 @@ hr {
   position: relative;
 }
 
-.newPostcloseBtn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .modal-content form {
   display: flex;
   flex-direction: column;
@@ -363,54 +354,92 @@ section.section-grid img {
 }
 
 
+
+
 /**************************************/
-/* New Post Modal */
+/* New Post Modal by Ola */
 /**************************************/
-/* Ola */
+
+.overlayHeader {
+  display: flex;
+  margin: auto;
+  background-color: #FFFFFF;
+  padding-left: 24px;
+  padding-right: 24px;
+  align-items: center;
+  height: 48px;
+  justify-content: space-between;
+}
+
+.overlayBody {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+}
+
+.overlayButton {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+}
+
+
+h3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
 
 .form-group {
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding-bottom: 16px;
 }
 
 .form-group label {
+  font-size: 14px;
   font-weight: 300;
-  margin-bottom: 4px;
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  line-height: 120%;
 }
 
-.form-group input,
-.form-group select {
+.form-group input {
   padding: 12px;
   border: 1px solid ;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 14px;
   border-color: #F0F0F0;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.form-group input:focus, 
+.form-group input:hover {
   outline: none;
   border-color: #2EC4B6;
 }
 
-.form-group input::placeholder,
-.form-group select::placeholder {
+.form-group input::placeholder {
   color: #737373;
   opacity: 0.7;
 }
 
-.form-group select {
-  color: #737373;
-  opacity: 0.7;
+#imageUpload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding: 40px;
+  padding-left: 20px;
+  width: 100%;
+  border: 1px dashed #ccc;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.form-group select:focus {
-  color: #333;
-  opacity: 1;
+#imageUpload:hover {
+  border-color: #2EC4B6;
 }
-
 
 /* Modal base styles */
 .newPostModal {
@@ -422,35 +451,46 @@ section.section-grid img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  backdrop-filter: blur(8px);
 }
 
 /* Modal box */
 .newPostModal-content{
+  overflow: hidden;
   background-color: #fef9ef;
   margin: 10% auto;
-  padding: 20px;
-  width: 40%;
-  border-radius: 10px;
+  width: 500px;
+  border-radius: 16px;
   position: relative;
 }
 
 /* Close button */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
+.newPostcloseBtn {
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 8px;
   cursor: pointer;
+  opacity: 100%;
 }
 
-/* Upload area styling */
+.newPostcloseBtn:hover {
+  opacity: 80%;
+}
+
+/* Upload area styling
 .upload-area {
-  margin-top: 10px;
+  display: flex;
   padding: 40px;
   border: 1px dashed #ccc;
+  border-radius: 12px;
   text-align: center;
   cursor: pointer;
 }
+ */
 
 .upload-btn {
   display: flex;
@@ -458,7 +498,7 @@ section.section-grid img {
   align-items: center;
   justify-content: center;
 
-  width: 149px;
+  width: 100%;
   height: 52px;
   color: #fcf5e5;
   border: none;
@@ -466,25 +506,75 @@ section.section-grid img {
   background-color: #212121;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 .upload-btn:hover {
   opacity: 80%;
 }
 
-/*
+/* Responsive modal */
 
-.upload-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
+@media (max-width: 780px) {
+  /* Modal box */
+  .newPostModal-content{
+    margin: 40% auto;
+    width: 70%;
+    border-radius: 16px;
+  }
+
+  .overlayHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .overlayBody {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+  
+  .overlayButton {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+
 }
-*/
+
+@media (max-width: 400px) {
+  
+  /* Modal box */
+  .newPostModal-content{
+    margin: 40% auto;
+    width: 90%;
+    border-radius: 16px;
+  }
+
+  .overlayHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .overlayBody {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+  
+  .overlayButton {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+  
+}
 
 /**************************************/
-/* New Post Modal Ends Here */
+/* New Post Modal Ends Here by Ola */
 /**************************************/
 
 
