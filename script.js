@@ -88,6 +88,7 @@ openBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   modalOverlay.classList.add("hidden");
+
 });
 
 modalOverlay.addEventListener("click", (e) => {
@@ -246,6 +247,24 @@ window.addEventListener("click", (e) => {
 // });
 
 // Adella
+
+//Esc key to close edit profile modal
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    modalOverlay.classList.add("hidden");
+
+    //Esc key to close image modal
+ imageModal.classList.add("hidden");
+ 
+   //Esc key to close new post modal
+   newPostModal.style.display = "none";
+  }
+});
+
+//End of Esc key to close modals by Adella
+
+
+
 
 // EDIT PROFILE FUNCTIONALITY --> INNOCENT
 // Function to save changes made in the modal
