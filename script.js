@@ -61,24 +61,19 @@ cardsData.forEach(
   (card) => (cardContainer.innerHTML += createCard(card.title, card.image))
 );
 
-attachHeartClickListeners();
 // END OF CARD RENDERING  BY WISE
 
-function attachHeartClickListeners() {
-  const heartIcons = document.querySelectorAll(".heart-icon");
+cardContainer.addEventListener("click", (e) => {
+  if (e.target.closest(".heart-icon")) {
+    const icon = e.target.closest(".heart-icon");
+    icon.classList.toggle("liked");
 
-  heartIcons.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      icon.classList.toggle("liked");
-
-      const currentColor = icon.getAttribute("fill") || "gray";
-      icon.setAttribute("fill", currentColor === "red" ? "gray" : "red");
-    });
-  });
-}
+    const currentColor = icon.getAttribute("fill") || "gray";
+    icon.setAttribute("fill", currentColor === "red" ? "gray" : "red");
+  }
+});
 
 // Oma
-
 
 // EDIT PROFILE MODAL --> TAWA
 const openBtn = document.querySelector(".edit-profile-btn");
@@ -160,7 +155,6 @@ openBtn.addEventListener("click", () => {
   }, 0);
 });
 
-
 // Osamudiameh Image Preview Overlay
 const imageModal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
@@ -212,44 +206,44 @@ window.addEventListener("click", (e) => {
 
 // OMA
 //Focus for the new post modal
-newPostBtn.addEventListener("click", () => {
-  newPostModal.style.display = "block";
+// newPostBtn.addEventListener("click", () => {
+//   newPostModal.style.display = "block";
 
-  // Delay focus and setup to ensure modal is visible
-  setTimeout(() => {
-    const inputs = newPostModal.querySelectorAll("input");
-    const firstInput = inputs[0];
-    if (!firstInput) return;
+//   // Delay focus and setup to ensure modal is visible
+//   setTimeout(() => {
+//     const inputs = newPostModal.querySelectorAll("input");
+//     const firstInput = inputs[0];
+//     if (!firstInput) return;
 
-    // Outline utility
-    const addOutline = (el) => {
-      el.style.outline = "2px solid darkgreen";
-      el.style.outlineOffset = "2px";
-    };
-    const removeOutline = (el) => {
-      el.style.outline = "none";
-    };
+//     // Outline utility
+//     const addOutline = (el) => {
+//       el.style.outline = "2px solid darkgreen";
+//       el.style.outlineOffset = "2px";
+//     };
+//     const removeOutline = (el) => {
+//       el.style.outline = "none";
+//     };
 
-    // Add focus, blur, mouseenter, and mouseleave to all inputs
-    inputs.forEach((input) => {
-      input.addEventListener("focus", () => addOutline(input));
-      input.addEventListener("blur", () => removeOutline(input));
-      input.addEventListener("mouseenter", () => {
-        addOutline(input);
-        if (firstInput !== input && document.activeElement === firstInput) {
-          firstInput.blur(); // blur first input if hovering another
-        }
-      });
-      input.addEventListener("mouseleave", () => {
-        if (document.activeElement !== input) removeOutline(input);
-      });
-    });
+//     // Add focus, blur, mouseenter, and mouseleave to all inputs
+//     inputs.forEach((input) => {
+//       input.addEventListener("focus", () => addOutline(input));
+//       input.addEventListener("blur", () => removeOutline(input));
+//       input.addEventListener("mouseenter", () => {
+//         addOutline(input);
+//         if (firstInput !== input && document.activeElement === firstInput) {
+//           firstInput.blur(); // blur first input if hovering another
+//         }
+//       });
+//       input.addEventListener("mouseleave", () => {
+//         if (document.activeElement !== input) removeOutline(input);
+//       });
+//     });
 
-    // Focus and highlight the first input
-    addOutline(firstInput);
-    firstInput.focus();
-  }, 0);
-});
+//     // Focus and highlight the first input
+//     addOutline(firstInput);
+//     firstInput.focus();
+//   }, 0);
+// });
 
 // Adella
 
@@ -335,7 +329,6 @@ uploadBtn.addEventListener("click", () => {
   const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
 
   cardContainer.insertAdjacentHTML("beforeend", newCard);
-  attachHeartClickListeners();
 
   // Reset
   postTitle.value = "";
