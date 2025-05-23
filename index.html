@@ -100,6 +100,7 @@
 
         <div id="modalOverlay" class="modal-overlay hidden">
           <div class="modal-content">
+            <!-- Edit profile modal -->
             <div class="modal-content__head">
               <h2>Edit Profile</h2>
               <span id="closeModalBtn" class="close-btn">&times;</span>
@@ -110,7 +111,7 @@
                 type="text"
                 id="userName"
                 name="username"
-                required
+                minlength="8" maxlength="20" 
                 autofocus
               />
 
@@ -119,14 +120,16 @@
                 type="text"
                 id="professionInput"
                 name="profession"
+                minlength="8" maxlength="120"
                 required
               />
+
               <label for="profileImage">Profile Image:</label>
               <input
                 type="file"
                 id="imageInput"
                 name="profileImage"
-                accept="image/*"
+                accept="image/jpeg, image/png, image/jpg"
               />
               <img id="imagePreview" src="" alt="Image Preview" />
 
@@ -171,16 +174,21 @@
               type="text"
               id="postTitle"
               placeholder="Input title"
-              required
-              autofocus
+              minlength="8"
+              maxlength="20"
             />
+            <small id="titleError" style="color: red"></small>
           </div>
 
             <!-- <label for="imageUpload">Upload Image</label> -->
             <div class="form-group">
               <label for="uploadImage">Upload Image</label> 
               <!-- <div class="upload-area"> -->
-                <input type="file" id="imageUpload"/>
+                <input
+              type="file"
+              id="imageUpload"
+              accept="image/jpeg, image/png, image/jpg"
+           />
               <!-- </div> -->
             </div>
             

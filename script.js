@@ -335,15 +335,45 @@ const imageUpload = document.getElementById("imageUpload");
 const postTitle = document.getElementById("postTitle");
 const uploadBtn = document.querySelector(".upload-btn");
 
-uploadBtn.addEventListener("click", () => {
-  const title = postTitle.value;
+// toggle btn fñ
+function setUploadButtonState(enabled) {
+  uploadBtn.disabled = !enabled;
+  uploadBtn.style.opacity = enabled ? 1 : 0.6;
+  uploadBtn.style.cursor = enabled ? "pointer" : "not-allowed";
+}
+
+function validateTitle(title, min) {
+  if (!title) return "Title is required.";
+  if (title.length < min) return `Title must be at least ${min} characters.`;
+  return "";
+}
+
+function checkInputs() {
+  const title = postTitle.value.trim();
+  const fileSelected = imageUpload.files.length > 0;
+
+  const minLength = postTitle.minLength;
+
+  const errorMessage = validateTitle(title, minLength);
+  titleError.textContent = errorMessage;
+
+  const isFormValid = errorMessage === "" && fileSelected;
+  setUploadButtonState(isFormValid);
+}
+
+// listen for input change
+postTitle.addEventListener("input", checkInputs);
+imageUpload.addEventListener("change", checkInputs);
+
+// btn Initial state
+setUploadButtonState(false);
+
+uploadBtn.addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+  const title = postTitle.value.trim();
   const file = imageUpload.files[0];
-
-  if (!title || !file) {
-    alert("Please enter a title and select an image.");
-    return;
-  }
-
+  
   const imgUrl = URL.createObjectURL(file);
   const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
 
