@@ -34,58 +34,55 @@ const cardsData = [
 
 const cardContainer = document.getElementById("card-container");
 
-cardsData.forEach((card) => {
-  cardContainer.innerHTML += `
-  <div class="each-card">
-    <div class="cardImg-div">
-        <img src="${card.image}" alt="${card.title}" class="card-img" />
+function createCard(title, imageUrl) {
+  return `
+    <div class="each-card">
+      <div class="cardImg-div">
+        <img src="${imageUrl}" alt="${title}" class="card-img" />
+      </div>
+      <div class="text-icon">
+        <p>${title}</p>
+        <svg
+          class="heart-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="30"
+          viewBox="0 0 256 256">
+          <path
+            d="M128,224s-96-55.16-96-120A56,56,0,0,1,128,56a56,56,0,0,1,96,48C224,168.84,128,224,128,224Z"
+          />
+        </svg>
+      </div> 
     </div>
-    <div class="text-icon">
-      <p>${card.title}</p>
-      <svg
-            class="heart-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="30"
-            viewBox="0 0 256 256" >
-            <path
-          d="M128,224s-96-55.16-96-120A56,56,0,0,1,128,56a56,56,0,0,1,96,48C224,168.84,128,224,128,224Z"
-        />
-      </svg>
-    </div> 
-  </div>`;
-});
+  `;
+}
+
+cardsData.forEach(
+  (card) => (cardContainer.innerHTML += createCard(card.title, card.image))
+);
+
+attachHeartClickListeners();
 // END OF CARD RENDERING  BY WISE
 
-// Kosi
-document.addEventListener("DOMContentLoaded", () => {
+function attachHeartClickListeners() {
   const heartIcons = document.querySelectorAll(".heart-icon");
 
   heartIcons.forEach((icon) => {
     icon.addEventListener("click", () => {
       icon.classList.toggle("liked");
-    });
-  });
-});
 
-// Wait a moment for DOM to be ready (if this runs before cards are rendered)
-setTimeout(() => {
-  const heartIcons = document.querySelectorAll(".heart-icon");
-
-  heartIcons.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      const currentColor = icon.getAttribute("fill");
+      const currentColor = icon.getAttribute("fill") || "gray";
       icon.setAttribute("fill", currentColor === "red" ? "gray" : "red");
     });
   });
-}, 0);
+}
 
 // Oma
 window.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".each-card");
 
   if (cards.length > 0) {
-    cards.forEach(card => {
+    cards.forEach((card) => {
       // Add accessibility attributes
       card.setAttribute("role", "button");
       const title = card.querySelector("p")?.textContent?.trim() || "Card";
@@ -98,10 +95,9 @@ window.addEventListener("DOMContentLoaded", () => {
       const applyFocusStyle = () => {
         card.style.boxShadow = "0 0 0 3px #722c2c";
         card.style.borderRadius = "8px";
-        card.style.backgroundColor = " #722c2c"; 
+        // card.style.backgroundColor = " #722c2c";
         card.style.outline = "4px solid #552424";
         card.style.color = " #e58c8c";
-
       };
 
       const removeFocusStyle = () => {
@@ -217,7 +213,7 @@ newPostcloseBtn.addEventListener("click", () => {
 
 // Close when clicking outside modal content
 window.addEventListener("click", (e) => {
-  if (e.target == modal) {
+  if (e.target === newPostModal) {
     newPostModal.style.display = "none";
   }
 });
@@ -288,3 +284,38 @@ function saveChanges() {
 // Kareema
 
 // Olaide
+// Card Redering Dynamically
+const imageUpload = document.getElementById("imageUpload");
+const postTitle = document.getElementById("postTitle");
+const uploadBtn = document.querySelector(".upload-btn");
+
+uploadBtn.addEventListener("click", () => {
+  const title = postTitle.value;
+  const file = imageUpload.files[0];
+
+  if (!title || !file) {
+    alert("Please enter a title and select an image.");
+    return;
+  }
+
+  const imgUrl = URL.createObjectURL(file);
+  const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
+
+  cardContainer.insertAdjacentHTML("beforeend", newCard);
+  attachHeartClickListeners();
+
+  // Reset
+  postTitle.value = "";
+  imageUpload.value = "";
+  newPostModal.style.display = "none";
+});
+
+// start with capital letter
+function capitalizedFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// todo:
+// * join tawa, ola and olaide's code together
+// rearrange other codes
+// work on inline validation
