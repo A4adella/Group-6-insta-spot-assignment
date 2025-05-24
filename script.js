@@ -74,6 +74,7 @@ openBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   modalOverlay.classList.add("hidden");
+
 });
 
 modalOverlay.addEventListener("click", (e) => {
@@ -145,6 +146,24 @@ window.addEventListener("click", (e) => {
 
 // Adella
 
+//Esc key to close edit profile modal
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    modalOverlay.classList.add("hidden");
+
+    //Esc key to close image modal
+ imageModal.classList.add("hidden");
+ 
+   //Esc key to close new post modal
+   newPostModal.style.display = "none";
+  }
+});
+
+//End of Esc key to close modals by Adella
+
+
+
+
 // EDIT PROFILE FUNCTIONALITY --> INNOCENT
 // Function to save changes made in the modal
 function saveChanges() {
@@ -198,3 +217,69 @@ function saveChanges() {
 // Kareema
 
 // Olaide
+
+// Card Redering Dynamically
+const imageUpload = document.getElementById("imageUpload");
+const postTitle = document.getElementById("postTitle");
+const uploadBtn = document.querySelector(".upload-btn");
+
+// toggle btn fñ
+function setUploadButtonState(enabled) {
+  uploadBtn.disabled = !enabled;
+  uploadBtn.style.opacity = enabled ? 1 : 0.6;
+  uploadBtn.style.cursor = enabled ? "pointer" : "not-allowed";
+}
+
+function validateTitle(title, min) {
+  if (!title) return "Title is required.";
+  if (title.length < min) return `Title must be at least ${min} characters.`;
+  return "";
+}
+
+function checkInputs() {
+  const title = postTitle.value.trim();
+  const fileSelected = imageUpload.files.length > 0;
+
+  const minLength = postTitle.minLength;
+
+  const errorMessage = validateTitle(title, minLength);
+  titleError.textContent = errorMessage;
+
+  const isFormValid = errorMessage === "" && fileSelected;
+  setUploadButtonState(isFormValid);
+}
+
+// listen for input change
+postTitle.addEventListener("input", checkInputs);
+imageUpload.addEventListener("change", checkInputs);
+
+// btn Initial state
+setUploadButtonState(false);
+
+uploadBtn.addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+  const title = postTitle.value.trim();
+  const file = imageUpload.files[0];
+  
+  const imgUrl = URL.createObjectURL(file);
+  const newCard = createCard(capitalizedFirstLetter(title), imgUrl);
+
+  cardContainer.insertAdjacentHTML("beforeend", newCard);
+
+  // Reset
+  postTitle.value = "";
+  imageUpload.value = "";
+  newPostModal.style.display = "none";
+});
+
+// start with capital letter
+function capitalizedFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// todo:
+// * join tawa, ola and olaide's code together
+// rearrange other codes
+// work on inline validation
+

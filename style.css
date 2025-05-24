@@ -613,20 +613,21 @@ section.section-grid img {
 .modal-img {
   margin-top: 1.2rem;
   border-radius: 12px;
-  max-width: 80vw;
+  max-width: 90vw;
   max-height: 60vh;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
-.modal-content__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-.close-btn {
+.close-btn{
+  position: absolute;
+  top: 12px;
+  right: -57px;
+  font-size: 1.8rem;
+  color: #ef233c;
   width: 32px;
   height: 32px;
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
   cursor: pointer;
 }
@@ -641,7 +642,7 @@ section.section-grid img {
 }
 /* Media queries for the close button */
 @media (max-width: 550px) {
-  .close-btn {
+  .close-btn{
     top: -16px;
     right: -10px;
   }
