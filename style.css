@@ -116,10 +116,14 @@ header {
 }
 
 .truncate {
-  white-space: nowrap;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 350px;
+  max-width: 500px;
+  line-height: 1.4;
 }
 
 .avatar-text {
@@ -155,6 +159,7 @@ header {
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
+  padding-top: 12px;
 }
 
 .edit-profile-btn:hover {
@@ -542,7 +547,7 @@ section.section-grid img {
   position: absolute;
   top: 50px;
   left: 90%;
-  color: #ef233c;
+  color: #fff;
 }
 
 .hidden {
