@@ -52,17 +52,19 @@
       <!-- WISE -- HERO SECTION -->
       <section class="hero-section">
         <div class="avatar-container">
-          <img
-            id="profileImage"
-            class="avatar"
-            src="./Images/Avatar.png"
-            alt="avatar-image"
-          />
+          <div class="avatar__img-container">
+            <img
+              id="profileImage"
+              class="avatar"
+              src="./Images/Avatar.png"
+              alt="avatar-image"
+            />
+          </div>
 
           <div class="avatar-info">
             <div class="avatar-text">
-              <h2 id="profileName">Bessie Coleman</h2>
-              <p id="profileProfession">Civil Aviator</p>
+              <h2 class="truncate" id="profileName">Bessie Coleman</h2>
+              <p class="truncate" id="profileProfession">Civil Aviator</p>
             </div>
 
             <button class="edit-profile-btn">
@@ -104,7 +106,6 @@
         <!-- ****** MODAL OVERLAY****** -->
         <div id="modalOverlay" class="modal-overlay hidden">
           <div class="modal-content">
- 
             <div class="ep-overlayHeader">
               <h3>Edit Profile</h3>
               <button id="closeModalBtn" class="close-btn">
@@ -113,7 +114,6 @@
             </div>
 
             <form>
-
               <div class="ep-overlayBody">
                 <div class="ep-form-group">
                   <label for="username">Full Name</label>
@@ -122,7 +122,8 @@
                     id="userName"
                     name="username"
                     placeholder="Input full name"
-                    minlength="8" maxlength="20" 
+                    minlength="8"
+                    maxlength="40"
                     required
                     autofocus
                   />
@@ -135,24 +136,32 @@
                     id="professionInput"
                     name="profession"
                     placeholder="Input profession"
-                    minlength="8" maxlength="120"
+                    minlength="8"
+                    maxlength="200"
                     required
                   />
                 </div>
-                
+
                 <div class="ep-form-group">
                   <label for="profileImage">Upload Image</label>
-                    <input 
-                    type="file" 
-                    id="imageInput" 
+                  <input
+                    type="file"
+                    id="imageInput"
                     name="profileImage"
-                    accept="image/*" 
-                    />
+                    accept="image/*"
+                  />
                 </div>
-                <!-- 
-                <img id="imagePreview" src="" alt="Image Preview" />
-                 -->
-            
+
+                <!-- Image Preview -->
+                <div class="ep-form-group">
+                  <label>Image Preview</label>
+                  <img
+                    id="imagePreview"
+                    style="display: none; max-width: 200px; margin-top: 10px"
+                    alt="Preview"
+                  />
+                </div>
+
                 <div class="ep-overlayButton">
                   <button
                     type="submit"
@@ -164,50 +173,6 @@
                 </div>
               </div>
             </form>
-          
-    
-            <!-- 
-            <div class="modal-content__head">
-              <h2>Edit Profile</h2>
-              <span id="closeModalBtn" class="close-btn">&times;</span>
-            </div>
-
-            <form>
-              <label for="username">Name:</label>
-              <input
-                type="text"
-                id="userName"
-                name="username"
-                required
-                autofocus
-              />
-
-              <label for="profession">Profession:</label>
-              <input
-                type="text"
-                id="professionInput"
-                name="profession"
-                required
-              />
-              <label for="profileImage">Profile Image:</label>
-              <input
-                type="file"
-                id="imageInput"
-                name="profileImage"
-                accept="image/*"
-              />
-              <img id="imagePreview" src="" alt="Image Preview" />
-
-              <button
-                type="submit"
-                onclick="saveChanges()"
-                class="save-changes-btn"
-              >
-                Save Changes
-              </button>
-            </form>
-          -->
-
           </div>
         </div>
 
@@ -225,8 +190,8 @@
               <span><img src="./Icons/Icon_close.svg" alt="add" /></span>
             </button>
           </div>
-        
-          <form>  
+
+          <form>
             <div class="overlayBody">
               <div class="form-group">
                 <label for="postTitle">Post title</label>
@@ -239,28 +204,20 @@
                   required
                   autofocus
                 />
+                <!-- Add this span for error messages -->
+                <span id="titleError" class="error-message"></span>
               </div>
               <div class="form-group">
                 <label for="uploadImage">Upload Image</label>
-                  <input type="file" id="imageUpload"/>
+                <input type="file" id="imageUpload" />
               </div>
-              
+
               <div class="overlayButton">
-                <button 
-                class="upload-btn"
-                type="submit"
-                
-                >Upload post
-                </button>
+                <button class="upload-btn" type="submit">Upload post</button>
               </div>
-
             </div>
-
-             
           </form>
         </div>
-
-
       </div>
 
       <hr class="hero-divider" />
@@ -275,7 +232,9 @@
             <div style="padding: 1.5rem 1.5rem 0 1.5rem">
               <span style="font-weight: 500"></span>
             </div>
-            <img id="modalImage" src="" alt="Preview" class="modal-img" />
+            <div class="modal-img__container">
+              <img id="modalImage" src="" alt="Preview" class="modal-img" />
+            </div>
             <p id="modalCaption" class="modal-caption"></p>
           </div>
         </div>
@@ -290,7 +249,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
-
-
-

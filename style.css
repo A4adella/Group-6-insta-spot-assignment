@@ -25,6 +25,14 @@ body {
   }
 }
 
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+  min-height: 16px;
+}
+
 /**************************************/
 /* Header*/
 /**************************************/
@@ -48,6 +56,7 @@ header {
   align-items: flex-end;
   margin: 34px 0 20px;
 }
+
 .avatar-container {
   display: flex;
   column-gap: 20px;
@@ -68,6 +77,7 @@ header {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+
 .newPostBtn:hover {
   opacity: 80%;
 }
@@ -78,20 +88,40 @@ header {
   line-height: 100%;
   letter-spacing: 0%;
 }
-.avatar {
+
+.avatar__img-container {
   width: 190px;
   height: 190px;
+  border-radius: 8px;
+  overflow: hidden;
 }
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .avatar-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px;
+}
+
 .avatar-text {
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  /* gap: 12px; */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   h2 {
     font-weight: 500;
@@ -176,7 +206,6 @@ header {
 }
 
 .hero-divider {
-  /* height: 1.5px; */
   height: 1px;
   background-color: rgba(33, 33, 33, 0.4);
   border: none;
@@ -191,7 +220,7 @@ header {
 .ep-overlayHeader {
   display: flex;
   margin: auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-left: 24px;
   padding-right: 24px;
   align-items: center;
@@ -208,7 +237,6 @@ header {
 .ep-overlayButton {
   padding-bottom: 24px;
 }
-
 
 .ep-form-group {
   display: flex;
@@ -230,13 +258,13 @@ header {
   border: 1px solid;
   border-radius: 8px;
   font-size: 0.8rem;
-  border-color: #F0F0F0;
+  border-color: #f0f0f0;
 }
 
 .ep-form-group input:focus,
 .ep-form-group select:focus {
   outline: none;
-  border-color: #2EC4B6;
+  border-color: #2ec4b6;
 }
 
 .ep-form-group input::placeholder {
@@ -258,7 +286,7 @@ header {
 }
 
 #imageInput:hover {
-  border-color: #2EC4B6;
+  border-color: #2ec4b6;
 }
 
 /**************************************/
@@ -272,12 +300,12 @@ header {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
 }
 
 /* Modal box */
-.modal-content{
+.modal-content {
   overflow: hidden;
   background-color: #fef9ef;
   margin: 10% auto;
@@ -287,7 +315,7 @@ header {
 }
 
 /* Close button */
-.close-btn{
+.close-btn {
   background-color: #212121;
   display: flex;
   align-items: center;
@@ -302,7 +330,6 @@ header {
 .close-btn:hover {
   opacity: 80%;
 }
-
 
 .save-changes-btn {
   display: flex;
@@ -343,23 +370,21 @@ header {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .ep-overlayBody {
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 16px;
   }
-  
+
   .ep-overlayButton {
     padding-bottom: 16px;
   }
-
 }
 
 @media (max-width: 460px) {
-  
   /* Modal box */
-  .modal-content{
+  .modal-content {
     margin: 50% auto;
     width: 90%;
     border-radius: 16px;
@@ -369,122 +394,17 @@ header {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .ep-overlayBody {
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 16px;
   }
-  
+
   .ep-overlayButton {
     padding-bottom: 16px;
   }
-  
 }
-
- /*
-.modal-overlay {
-   
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
- 
-
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-}
-
-
-.hidden {
-  display: none;
-}
-
-
-.modal-content {
-  overflow: hidden;
-  background-color: #fef9ef;
-  margin: 10% auto;
-  width: 500px;
-  border-radius: 16px;
-  position: relative;
-*/
-  /*
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  
-}
-  */
-
-
-/*
-.modal-content form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.modal-content input,
-.modal-content button {
-  padding: 10px;
-  font-size: 16px;
-}
-
-.modal-content input {
-  border: 2px solid #dcc48f;
-  border-radius: 7px;
-  outline: none;
-}
-
-.modal-content input:focus {
-  box-shadow: inset 0 0 0 3px #dcc48f;
-}
- 
-.save-changes-btn {
-  width: 149px;
-  height: 52px;
-  color: #fcf5e5;
-  border: none;
-  border-radius: 8px;
-  background-color: #212121;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin: 0 auto;
-}
-
-
-.save-changes-btn:hover {
-  opacity: 80%;
-  transition: all 0.3s ease-in-out;
-}
-
-
-#imagePreview {
-  max-width: 100px;
-  display: none;
-  margin-top: 10px;
-}
-*/
-/**************************************/
-/* Edit Profile Moal Overlay Ends here */
-/**************************************/
 
 /**************************************/
 /* Section - grid */
@@ -497,47 +417,23 @@ section.section-grid {
   margin: 20px 0 40px;
   user-select: none;
 }
+
 section.section-grid img {
   border-radius: 8px;
   transition: transform 0.4s ease-in-out;
 }
+
 .section-grid img:hover,
 .section-grid img:focus-visible {
   transform: scale(1.04);
   cursor: pointer;
 }
+
 .each-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  /* justify-content: space-between; */
-  /* height: 320px;  */
-  /* border: 1px solid #ddd; */
-  /* border-radius: 8px; */
-  /* overflow: hidden; */
-  /* background: #fff; */
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
-
-/* .cardImg-div {
-  height: 200px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.cardImg-div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  display: block;
-}
-
-.text-icon {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .cardImg-div {
   width: 100%;
@@ -555,15 +451,7 @@ section.section-grid img {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  /* margin-top: 12px; */
 }
-
-/* .text-icon svg {
-  transition: transform 0.4s ease-in-out;
-  cursor: pointer;
-  fill: #212121;
-  opacity: 0.4;
-} */
 
 .heart-icon {
   fill: #212121;
@@ -571,23 +459,31 @@ section.section-grid img {
   opacity: 0.4;
   transition: all 0.2s ease;
 }
+
 .text-icon svg:hover {
   transform: scale(1.07);
   opacity: 1;
 }
+
 .heart-icon.liked {
   fill: red;
+  opacity: 1;
 }
+
 /* Image Preview Overlay Styles */
 .modal-inner {
-  position: relative;
-  padding-bottom: 1.5rem;
-  min-width: 350px;
-  max-width: 90vw;
+  width: 100%;
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  position: relative;
+  padding: 2rem;
 }
+
 .modal-caption {
   margin-top: 1rem;
   background: rgba(0, 0, 0, 0.9);
@@ -598,54 +494,43 @@ section.section-grid img {
   font-weight: 500;
   text-align: center;
 }
-/* .modal-overlay{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-} */
-.modal-img {
-  margin-top: 1.2rem;
+
+.modal-img__container {
+  max-width: 800px;
+  max-height: 600px;
+
   border-radius: 12px;
-  max-width: 90vw;
-  max-height: 60vh;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
 }
-.close-btn{
-  position: absolute;
-  top: 12px;
-  right: -57px;
-  font-size: 1.8rem;
-  color: #ef233c;
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.close-btn {
   width: 32px;
   height: 32px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.8rem;
   z-index: 2;
   cursor: pointer;
 }
+
 .close-btn__grid {
   position: absolute;
-  top: 12px;
-  right: -57px;
+  top: 50px;
+  left: 90%;
   color: #ef233c;
 }
+
 .hidden {
   display: none;
-}
-/* Media queries for the close button */
-@media (max-width: 550px) {
-  .close-btn{
-    top: -16px;
-    right: -10px;
-  }
 }
 
 /* tawa */
@@ -668,7 +553,6 @@ section.section-grid img {
   }
 }
 
-
 /**************************************/
 /* New Post Modal by Ola */
 /**************************************/
@@ -676,7 +560,7 @@ section.section-grid img {
 .overlayHeader {
   display: flex;
   margin: auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-left: 24px;
   padding-right: 24px;
   align-items: center;
@@ -693,7 +577,6 @@ section.section-grid img {
 .overlayButton {
   padding-bottom: 24px;
 }
-
 
 h3 {
   font-weight: 400;
@@ -721,13 +604,13 @@ h3 {
   border: 1px solid;
   border-radius: 8px;
   font-size: 0.8rem;
-  border-color: #F0F0F0;
+  border-color: #f0f0f0;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #2EC4B6;
+  border-color: #2ec4b6;
 }
 
 .form-group input::placeholder {
@@ -749,7 +632,7 @@ h3 {
 }
 
 #imageUpload:hover {
-  border-color: #2EC4B6;
+  border-color: #2ec4b6;
 }
 
 /**************************************/
@@ -769,7 +652,7 @@ h3 {
 }
 
 /* Modal box */
-.newPostModal-content{
+.newPostModal-content {
   overflow: hidden;
   background-color: #fef9ef;
   margin: 10% auto;
@@ -779,7 +662,7 @@ h3 {
 }
 
 /* Close button */
-.newPostcloseBtn{
+.newPostcloseBtn {
   background-color: #212121;
   display: flex;
   align-items: center;
@@ -794,7 +677,6 @@ h3 {
 .newPostcloseBtn:hover {
   opacity: 80%;
 }
-
 
 .upload-btn {
   display: flex;
@@ -835,23 +717,21 @@ h3 {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .overlayBody {
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 16px;
   }
-  
+
   .overlayButton {
     padding-bottom: 16px;
   }
-
 }
 
 @media (max-width: 460px) {
-  
   /* Modal box */
-  .newPostModal-content{
+  .newPostModal-content {
     margin: 50% auto;
     width: 90%;
     border-radius: 16px;
@@ -861,22 +741,17 @@ h3 {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .overlayBody {
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 16px;
   }
-  
+
   .overlayButton {
     padding-bottom: 16px;
   }
-  
 }
-
-/**************************************/
-/* New Post Modal Ends Here by Ola */
-/**************************************/
 
 /**************************************/
 /* Footer */
