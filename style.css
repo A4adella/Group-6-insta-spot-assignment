@@ -313,13 +313,18 @@ header {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
 }
 
 /* Modal box */
 .modal-content {
   overflow: hidden;
   background-color: #fef9ef;
-  margin: 10% auto;
+  margin: auto;
   width: 500px;
   border-radius: 16px;
   position: relative;
@@ -372,7 +377,7 @@ header {
 @media (max-width: 780px) {
   /* Modal box */
   .modal-content {
-    margin: 50% auto;
+    margin: auto;
     width: 70%;
     border-radius: 16px;
   }
@@ -396,7 +401,7 @@ header {
 @media (max-width: 460px) {
   /* Modal box */
   .modal-content {
-    margin: 50% auto;
+    margin: auto;
     width: 90%;
     border-radius: 16px;
   }
@@ -658,15 +663,23 @@ h3 {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
+}
+
+.newPostModal__wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
 }
 
 /* Modal box */
 .newPostModal-content {
   overflow: hidden;
   background-color: #fef9ef;
-  margin: 10% auto;
+  margin: auto;
   width: 500px;
   border-radius: 16px;
   position: relative;
@@ -719,7 +732,7 @@ h3 {
 @media (max-width: 780px) {
   /* Modal box */
   .newPostModal-content {
-    margin: 50% auto;
+    margin: auto;
     width: 70%;
     border-radius: 16px;
   }
@@ -743,7 +756,7 @@ h3 {
 @media (max-width: 460px) {
   /* Modal box */
   .newPostModal-content {
-    margin: 50% auto;
+    margin: auto;
     width: 90%;
     border-radius: 16px;
   }
