@@ -49,9 +49,8 @@
     </header>
 
     <main class="container">
-      <!-- WISE -- HERO SECTION -->
       <section class="hero-section">
-        <div class="avatar-container">
+        <figure class="avatar-container">
           <div class="avatar__img-container">
             <img
               id="profileImage"
@@ -61,7 +60,7 @@
             />
           </div>
 
-          <div class="avatar-info">
+          <figcaption class="avatar-info">
             <div class="avatar-text">
               <h2 class="truncate" id="profileName">Bessie Coleman</h2>
               <p class="truncate" id="profileProfession">Civil Aviator</p>
@@ -94,93 +93,93 @@
               </svg>
               Edit Profile
             </button>
-          </div>
-        </div>
+          </figcaption>
+        </figure>
 
-        <!-- Ola: I added a class tag to this button -->
+        <!-- new post button -->
         <button id="newPostBtn" class="newPostBtn">
           <span><img src="./Icons/Icon_add.svg" alt="add" /></span>
           <span>New Post</span>
         </button>
-
-        <!-- ****** EDIT MODAL OVERLAY****** -->
-        <div id="modalOverlay" class="modal-overlay hidden">
-          <div class="modal-content">
-            <div class="ep-overlayHeader">
-              <h3>Edit Profile</h3>
-              <button id="closeModalBtn" class="close-btn">
-                <span><img src="./Icons/Icon_close.svg" alt="add" /></span>
-              </button>
-            </div>
-
-            <form>
-              <div class="ep-overlayBody">
-                <div class="ep-form-group">
-                  <label for="username">Full Name</label>
-                  <input
-                    type="text"
-                    id="userName"
-                    name="username"
-                    placeholder="Input full name"
-                    minlength="8"
-                    maxlength="54"
-                    required
-                    autofocus
-                  />
-                </div>
-
-                <div class="ep-form-group">
-                  <label for="profession">Profession</label>
-                  <input
-                    type="text"
-                    id="professionInput"
-                    name="profession"
-                    placeholder="Input profession"
-                    minlength="8"
-                    maxlength="100"
-                    required
-                  />
-                </div>
-
-                <div class="ep-form-group">
-                  <label for="profileImage">Upload Image</label>
-                  <input
-                    type="file"
-                    id="imageInput"
-                    name="profileImage"
-                    accept="image/*"
-                  />
-                </div>
-
-                <!-- Image Preview -->
-                <div class="ep-form-group">
-                  <label>Image Preview</label>
-                  <img
-                    id="imagePreview"
-                    style="display: none; max-width: 80px; margin-top: 10px"
-                    alt="Preview"
-                  />
-                </div>
-
-                <div class="ep-overlayButton">
-                  <button
-                    type="submit"
-                    onclick="saveChanges()"
-                    class="save-changes-btn"
-                  >
-                    Save Changes
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
       </section>
+
+      <!--  Edit Profile Modal -->
+      <dialog id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+          <div class="ep-overlayHeader">
+            <h3>Edit Profile</h3>
+            <button id="closeModalBtn" class="close-btn">
+              <span><img src="./Icons/Icon_close.svg" alt="add" /></span>
+            </button>
+          </div>
+
+          <form>
+            <div class="ep-overlayBody">
+              <div class="ep-form-group">
+                <label for="username">Full Name</label>
+                <input
+                  type="text"
+                  id="userName"
+                  name="username"
+                  placeholder="Input full name"
+                  minlength="8"
+                  maxlength="54"
+                  required
+                  autofocus
+                />
+              </div>
+
+              <div class="ep-form-group">
+                <label for="profession">Profession</label>
+                <input
+                  type="text"
+                  id="professionInput"
+                  name="profession"
+                  placeholder="Input profession"
+                  minlength="8"
+                  maxlength="100"
+                  required
+                />
+              </div>
+
+              <div class="ep-form-group">
+                <label for="profileImage">Upload Image</label>
+                <input
+                  type="file"
+                  id="imageInput"
+                  name="profileImage"
+                  accept="image/*"
+                />
+              </div>
+
+              <!-- Image Preview -->
+              <div class="ep-form-group">
+                <label>Image Preview</label>
+                <img
+                  id="imagePreview"
+                  style="display: none; max-width: 80px; margin-top: 10px"
+                  alt="Preview"
+                />
+              </div>
+
+              <div class="ep-overlayButton">
+                <button
+                  type="submit"
+                  onclick="saveChanges()"
+                  class="save-changes-btn"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </dialog>
 
       <hr class="hero-divider" />
 
-      <!-- ****** NEW POST MODAL OVERLAY****** -->
-      <div id="newPostModal" class="newPostModal">
+      <!-- New Post Modal -->
+      <dialog id="newPostModal" class="newPostModal">
         <div class="newPostModal__wrapper">
           <div class="newPostModal-content">
             <div class="overlayHeader">
@@ -218,11 +217,10 @@
             </form>
           </div>
         </div>
-      </div>
+      </dialog>
 
       <hr class="hero-divider" />
 
-      <!-- Osamudiameh -->
       <section class="section-grid" id="card-container">
         <div id="imageModal" class="hidden modal-overlay">
           <div class="modal-inner">
@@ -243,7 +241,6 @@
       <hr />
     </main>
 
-    <!-- oma's code -->
     <footer class="site-footer">2023 &copy; Spots</footer>
 
     <script src="./script.js"></script>
