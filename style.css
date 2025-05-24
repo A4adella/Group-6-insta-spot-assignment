@@ -183,12 +183,209 @@ header {
 }
 
 /**************************************/
-/* Edit Profile Moal Overlay Starts here */
+/* Edit Profile Modal Overlay Starts here */
 /**************************************/
 
 /* Hide modal by default */
 
+.ep-overlayHeader {
+  display: flex;
+  margin: auto;
+  background-color: #FFFFFF;
+  padding-left: 24px;
+  padding-right: 24px;
+  align-items: center;
+  height: 48px;
+  justify-content: space-between;
+}
+
+.ep-overlayBody {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+}
+
+.ep-overlayButton {
+  padding-bottom: 24px;
+}
+
+
+.ep-form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 16px;
+}
+
+.ep-form-group label {
+  font-size: 14px;
+  text-align: left;
+  font-weight: 300;
+  margin-bottom: 8px;
+  line-height: 120%;
+}
+
+.ep-form-group input {
+  padding: 12px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border-color: #F0F0F0;
+}
+
+.ep-form-group input:focus,
+.ep-form-group select:focus {
+  outline: none;
+  border-color: #2EC4B6;
+}
+
+.ep-form-group input::placeholder {
+  color: #737373;
+  opacity: 0.7;
+}
+
+#imageInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding: 40px;
+  padding-left: 20px;
+  width: 100%;
+  border: 1px dashed #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#imageInput:hover {
+  border-color: #2EC4B6;
+}
+
+/**************************************/
+/* Modal base styles (Edit Profile) */
+/**************************************/
+
 .modal-overlay {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  backdrop-filter: blur(8px);
+}
+
+/* Modal box */
+.modal-content{
+  overflow: hidden;
+  background-color: #fef9ef;
+  margin: 10% auto;
+  width: 500px;
+  border-radius: 16px;
+  position: relative;
+}
+
+/* Close button */
+.close-btn{
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 100%;
+}
+
+.close-btn:hover {
+  opacity: 80%;
+}
+
+
+.save-changes-btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 52px;
+  color: #fcf5e5;
+  border: none;
+  border-radius: 8px;
+  background-color: #212121;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.save-changes-btn:hover {
+  opacity: 80%;
+}
+
+/* Responsive modal */
+
+@media (max-width: 780px) {
+  /* Modal box */
+  .modal-content {
+    margin: 50% auto;
+    width: 70%;
+    border-radius: 16px;
+  }
+
+  .ep-overlayHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .ep-overlayBody {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+  
+  .ep-overlayButton {
+    padding-bottom: 16px;
+  }
+
+}
+
+@media (max-width: 460px) {
+  
+  /* Modal box */
+  .modal-content{
+    margin: 50% auto;
+    width: 90%;
+    border-radius: 16px;
+  }
+
+  .ep-overlayHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .ep-overlayBody {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+  
+  .ep-overlayButton {
+    padding-bottom: 16px;
+  }
+  
+}
+
+ /*
+.modal-overlay {
+   
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -199,21 +396,45 @@ header {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+ 
+
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
 }
+
 
 .hidden {
   display: none;
 }
 
+
 .modal-content {
+  overflow: hidden;
+  background-color: #fef9ef;
+  margin: 10% auto;
+  width: 500px;
+  border-radius: 16px;
+  position: relative;
+*/
+  /*
   background: #fff;
   padding: 2rem;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
   position: relative;
+  
 }
+  */
 
+
+/*
 .modal-content form {
   display: flex;
   flex-direction: column;
@@ -233,10 +454,9 @@ header {
 }
 
 .modal-content input:focus {
-  /* border-color: #dcc48f; */
   box-shadow: inset 0 0 0 3px #dcc48f;
 }
-
+ 
 .save-changes-btn {
   width: 149px;
   height: 52px;
@@ -249,17 +469,19 @@ header {
   margin: 0 auto;
 }
 
+
 .save-changes-btn:hover {
   opacity: 80%;
   transition: all 0.3s ease-in-out;
 }
+
 
 #imagePreview {
   max-width: 100px;
   display: none;
   margin-top: 10px;
 }
-
+*/
 /**************************************/
 /* Edit Profile Moal Overlay Ends here */
 /**************************************/
@@ -335,12 +557,14 @@ section.section-grid img {
   font-size: 20px;
   /* margin-top: 12px; */
 }
+
 /* .text-icon svg {
   transition: transform 0.4s ease-in-out;
   cursor: pointer;
   fill: #212121;
   opacity: 0.4;
 } */
+
 .heart-icon {
   fill: #212121;
   cursor: pointer;
@@ -466,8 +690,6 @@ section.section-grid img {
 }
 
 .overlayButton {
-  padding-left: 24px;
-  padding-right: 24px;
   padding-bottom: 24px;
 }
 
@@ -529,7 +751,10 @@ h3 {
   border-color: #2EC4B6;
 }
 
-/* Modal base styles */
+/**************************************/
+/* Modal base styles (New Post)  */
+/**************************************/
+
 .newPostModal {
   display: none;
   position: fixed;
@@ -539,10 +764,12 @@ h3 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  backdrop-filter: blur(8px);
 }
 
 /* Modal box */
 .newPostModal-content{
+  overflow: hidden;
   background-color: #fef9ef;
   margin: 10% auto;
   width: 500px;
@@ -551,7 +778,7 @@ h3 {
 }
 
 /* Close button */
-.newPostcloseBtn {
+.newPostcloseBtn{
   background-color: #212121;
   display: flex;
   align-items: center;
@@ -567,16 +794,6 @@ h3 {
   opacity: 80%;
 }
 
-/* Upload area styling
-.upload-area {
-  display: flex;
-  padding: 40px;
-  border: 1px dashed #ccc;
-  border-radius: 12px;
-  text-align: center;
-  cursor: pointer;
-}
- */
 
 .upload-btn {
   display: flex;
@@ -598,6 +815,7 @@ h3 {
   line-height: 100%;
   letter-spacing: 0%;
 }
+
 .upload-btn:hover {
   opacity: 80%;
 }
@@ -606,8 +824,8 @@ h3 {
 
 @media (max-width: 780px) {
   /* Modal box */
-  .newPostModal-content{
-    margin: 40% auto;
+  .newPostModal-content {
+    margin: 50% auto;
     width: 70%;
     border-radius: 16px;
   }
@@ -624,18 +842,16 @@ h3 {
   }
   
   .overlayButton {
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 16px;
   }
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   
   /* Modal box */
   .newPostModal-content{
-    margin: 40% auto;
+    margin: 50% auto;
     width: 90%;
     border-radius: 16px;
   }
@@ -652,8 +868,6 @@ h3 {
   }
   
   .overlayButton {
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 16px;
   }
   
