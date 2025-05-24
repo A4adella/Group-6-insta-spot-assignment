@@ -241,13 +241,17 @@ function saveChanges() {
     });
   }
 
+  const capitalizedName = toTitleCase(name);
+  const capitalizedProfession = toTitleCase(profession);
+
   // Update the profile name and profession
   if (name) {
-    document.getElementById("profileName").textContent = name;
+    document.getElementById("profileName").textContent = capitalizedName;
   }
 
   if (profession) {
-    document.getElementById("profileProfession").textContent = profession;
+    document.getElementById("profileProfession").textContent =
+      capitalizedProfession;
   }
 
   // Update the profile image
