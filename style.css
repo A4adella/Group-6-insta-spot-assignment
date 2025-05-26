@@ -233,8 +233,10 @@ header {
 }
 
 .hero-divider {
-  height: 1px;
-  background-color: rgba(33, 33, 33, 0.4);
+  margin: 20px 0;
+  height: 1.5px;
+  background-color: #212121;
+  opacity: 40%;
   border: none;
 }
 
@@ -334,6 +336,9 @@ header {
   align-items: center;
   justify-content: center;
   padding: 2px;
+
+  overflow-y: auto;
+  padding: 1rem;
 }
 
 /* Modal box */
@@ -344,6 +349,9 @@ header {
   width: 500px;
   border-radius: 16px;
   position: relative;
+
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 /* Close button */
